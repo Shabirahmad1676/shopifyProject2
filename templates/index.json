@@ -1,0 +1,304 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover Timeless Luxury with Tamura Jewelry",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "EXPLORE ALL COLLECTION",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2025_BOR_16Stones_VIDEO_16x9_1-2.png",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_r3niTA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_FGrpLx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rings"
+          }
+        },
+        "featured_collection_wKYzVx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "featured_collection_XLT3x3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "earings"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_FGrpLx",
+        "featured_collection_wKYzVx",
+        "featured_collection_XLT3x3"
+      ],
+      "name": "Shop By category",
+      "settings": {
+        "title": "Shop By Category",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_MQiPwQ": {
+      "type": "collage",
+      "blocks": {
+        "image_3keeHm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Fiery0_40ct.png"
+          }
+        },
+        "collection_YkqrBL": {
+          "type": "collection",
+          "settings": {
+            "collection": "rings"
+          }
+        }
+      },
+      "block_order": [
+        "image_3keeHm",
+        "collection_YkqrBL"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Collections",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_HTBNCe": {
+      "type": "collage",
+      "blocks": {
+        "image_YTjVBy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageSep3_2025_09_25_13PM1.png"
+          }
+        },
+        "collection_gKfRFN": {
+          "type": "collection",
+          "settings": {
+            "collection": "earings"
+          }
+        }
+      },
+      "block_order": [
+        "image_YTjVBy",
+        "collection_gKfRFN"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_AwiDKk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_98rHpn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
+            "title": "Consulatation",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hJFE8N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-gemstone-7096952_1.png",
+            "title": "Design Approval",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_h9haUN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-shop-7307817_1.png",
+            "title": "Material Selection",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_C3yfRk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479327.png",
+            "title": "Final Review",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_98rHpn",
+        "column_hJFE8N",
+        "column_h9haUN",
+        "column_C3yfRk"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "VIEW CUSTOM JEWELERY",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_7WeAxj": {
+      "type": "image-banner",
+      "blocks": {
+        "text_dJWMGz": {
+          "type": "text",
+          "settings": {
+            "text": "VISIT OUR STORE",
+            "text_style": "body"
+          }
+        },
+        "buttons_zGUMhy": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "LOCATE US",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_dJWMGz",
+        "buttons_zGUMhy"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Picture_Blue_Nile_Store.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "collection_list_r3niTA",
+    "collage_MQiPwQ",
+    "collage_HTBNCe",
+    "multicolumn_AwiDKk",
+    "image_banner_7WeAxj"
+  ]
+}

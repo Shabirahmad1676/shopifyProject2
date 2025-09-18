@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Build artifacts
+dist/
+*.log
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Shopify CLI local files
+.shopify-cli.yml
+.shopify.theme.toml

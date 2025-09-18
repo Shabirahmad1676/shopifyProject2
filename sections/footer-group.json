@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_EC3Xje": {
+          "type": "link_list",
+          "name": "customer",
+          "settings": {
+            "heading": "Customers",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_EC3Xje"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_footer_HUBRnb": {
+      "type": "custom-footer",
+      "name": "Custom Footer",
+      "settings": {
+        "logo": "shopify://shop_images/Tamura_Jewelry_61870656-af49-4cd6-9572-e9c2e164d1f0.png",
+        "description": "Tamura Jewelry, based in NYC, offers custom designs, luxury Swiss watches, and timeless elegance. Elevate your style with us!",
+        "menu_quick": "main-menu",
+        "menu_care": "footer",
+        "hours": "Monday to Saturday: 10:00AM - 7:00PM",
+        "phone": "(646) 720-1067",
+        "address": "15 W 47th St, New York, NY 10036",
+        "social_facebook": "https://www.facebok.com",
+        "social_instagram": "https://www.facebok.com",
+        "social_youtube": "https://www.facebok.com",
+        "social_tiktok": "https://www.facebok.com",
+        "newsletter_placeholder": "Enter Your Email",
+        "newsletter_button": "→",
+        "copyright_text": "Copyright © 2025 All rights reserved."
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "custom_footer_HUBRnb"
+  ]
+}

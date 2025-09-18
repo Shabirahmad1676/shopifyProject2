@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_qPWqaA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aMar6T": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "h1"
+          }
+        },
+        "text_whEE8r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tamura Jewelry is a brand founded on a commitment to timeless luxury and exceptional craftsmanship. In 2015, we embarked on a journey to redefine elegance, blending the finest materials with expert artistry. From custom designs to premium Swiss-made watches, we’ve built our legacy by creating pieces that stand the test of time. Our passion for detail, quality, and design sets us apart, and we continue to lead the way in offering unique, one-of-a-kind jewelry for those who appreciate the beauty of the finer things in life.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aMar6T",
+        "text_whEE8r"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Picture_diamond_engagement_rings.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_nE7efH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Gx3RAj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_yJntWc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xr4dWH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Fiery0_40ct.png",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Gx3RAj",
+        "column_yJntWc",
+        "column_xr4dWH"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Button label",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_NQeKxT": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_wTBqL4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rings"
+          }
+        },
+        "featured_collection_xWYwQU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "featured_collection_4FanVJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "earings"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_wTBqL4",
+        "featured_collection_xWYwQU",
+        "featured_collection_4FanVJ"
+      ],
+      "name": "Shop By category",
+      "settings": {
+        "title": "SHOP",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_JLtMMk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FHgtPn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
+            "title": "Consulatation",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TnwJQV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-gemstone-7096952_1_1.png",
+            "title": "Design Approval",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_MLyahM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479327.png",
+            "title": "Material Selection",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EdmYTa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-shop-7307817_1.png",
+            "title": "Final Review",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FHgtPn",
+        "column_TnwJQV",
+        "column_MLyahM",
+        "column_EdmYTa"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "VIEW CUSTOM JEWELERY",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_qPWqaA",
+    "multicolumn_nE7efH",
+    "collection_list_NQeKxT",
+    "multicolumn_JLtMMk"
+  ]
+}

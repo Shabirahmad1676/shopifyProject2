@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_6hrxVC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yHQkiQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Diamond Collection",
+            "heading_size": "h1"
+          }
+        },
+        "text_QiTaJY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please fill out the form below to contact us or you may also reach us by e-mail, phone or whatsapp.</p>"
+          }
+        },
+        "button_fJC4F9": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yHQkiQ",
+        "text_QiTaJY",
+        "button_fJC4F9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "multicolumn_anTG7Y": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_DUnbYM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
+            "title": "Consultation",
+            "text": "<p>You bring the vision, we bring the expertise</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tWCFc9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-gemstone-7096952_1_3ae16dc5-ebc7-41e2-bafb-9dffc0a27aaa.png",
+            "title": "Design Approval",
+            "text": "<p>Our designers create a 3D rendering or hand sketch for your review<br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rLqUbD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479327.png",
+            "title": "Material Selection",
+            "text": "<p>Choose from gold, platinum,diamonds,gemstones.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_yTAqVE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-shop-7307817_1.png",
+            "title": "Final Reveal",
+            "text": "<p>We present your finished piece, polished, packaged, and ready for lifetime wear</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_DUnbYM",
+        "column_tWCFc9",
+        "column_rLqUbD",
+        "column_yTAqVE"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Custom Process",
+        "heading_size": "h0",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "VIEW CUSTOM JEWELERY",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_3cBfAn": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_UdHzQ6": {
+          "type": "heading",
+          "settings": {
+            "heading": "VISIT US IN STORE",
+            "heading_size": "h1"
+          }
+        },
+        "text_MfbhEg": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_LkciMX": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "LOCATE US",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UdHzQ6",
+        "text_MfbhEg",
+        "buttons_LkciMX"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Picture_Blue_Nile_Store.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "rich_text_6hrxVC",
+    "main",
+    "multicolumn_anTG7Y",
+    "image_banner_3cBfAn"
+  ]
+}
