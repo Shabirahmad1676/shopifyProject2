@@ -1,6 +1,5 @@
 .image-with-text .grid {
   margin-bottom: 0;
-  flex-direction: row-reverse;
 }
 
 .image-with-text .grid__item {
@@ -366,16 +365,11 @@
 
 .image-with-text__heading {
   margin-bottom: 0;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 38.4px;
 }
 
 .image-with-text__text p {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 17px;
-  font-family: "Poppins";
 }
 
 @media screen and (max-width: 749px) {

@@ -1,14 +1,12 @@
 .card-wrapper {
   color: inherit;
-  height: 500px;
+  height: 100%;
   position: relative;
-  /* top: 10%; */
   text-decoration: none;
 }
 
 .card {
   text-decoration: none;
-  height: 200px;
   text-align: var(--text-alignment);
 }
 
@@ -304,11 +302,6 @@
 
 .card__heading {
   margin-top: 0;
-  font-family: "Poppins";
-  font-weight: 900;
-  font-size: 14.34px;
-  text-transform: uppercase;
-  /* font-weight: extraBold; */
   margin-bottom: 0;
 }
 
@@ -464,7 +457,6 @@
 .card .icon-wrap {
   margin-left: 0.8rem;
   white-space: nowrap;
-  display: none;
   transition: transform var(--duration-short) ease;
   overflow: hidden;
 }

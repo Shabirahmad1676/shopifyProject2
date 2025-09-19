@@ -38,35 +38,35 @@
   }
 }
 
-/* Contact form UI enhancements */
-.contact.page-width.page-width--narrow {
+/* Contact form UI enhancements (scoped to contact template) */
+.template-page-contact .contact.page-width.page-width--narrow {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   padding: 24px;
   background: #fff;
 }
 
-.contact .field__input,
-.contact .text-area.field__input {
+.template-page-contact .contact .field__input,
+.template-page-contact .contact .text-area.field__input {
   background: #fafafa;
   border: 1px solid #ddd;
   color: #000;
 }
 
-.contact .field__input:focus,
-.contact .text-area.field__input:focus {
+.template-page-contact .contact .field__input:focus,
+.template-page-contact .contact .text-area.field__input:focus {
   outline: none;
   border-color: #000;
   box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
 }
 
 /* Stack fields into rows, then full-width message */
-.contact__fields .field { width: 100%; }
+.template-page-contact .contact__fields .field { width: 100%; }
 
 /* Submit button: full width, black background */
-.contact__button .button {
+.template-page-contact .contact__button .button {
   width: 100%;
   background: #000;
   color: #fff;
 }
-.contact__button .button:hover { background: #111; color: #fff; }
+.template-page-contact .contact__button .button:hover { background: #111; color: #fff; }

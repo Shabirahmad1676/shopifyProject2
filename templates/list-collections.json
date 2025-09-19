@@ -62,60 +62,60 @@
         "columns_mobile": "2"
       }
     },
-    "multicolumn_anTG7Y": {
+    "multicolumn_7nzLkY": {
       "type": "multicolumn",
       "blocks": {
-        "column_DUnbYM": {
+        "column_6FNUKK": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/noun-consultation-7796326_1.png",
-            "title": "Consultation",
-            "text": "<p>You bring the vision, we bring the expertise</p>",
+            "title": "Consulatation",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_tWCFc9": {
+        "column_iBW6Tr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-gemstone-7096952_1_3ae16dc5-ebc7-41e2-bafb-9dffc0a27aaa.png",
+            "image": "shopify://shop_images/noun-gemstone-7096952_1.png",
             "title": "Design Approval",
-            "text": "<p>Our designers create a 3D rendering or hand sketch for your review<br/></p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_rLqUbD": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1707479327.png",
-            "title": "Material Selection",
-            "text": "<p>Choose from gold, platinum,diamonds,gemstones.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_yTAqVE": {
+        "column_VJKrbb": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/noun-shop-7307817_1.png",
-            "title": "Final Reveal",
-            "text": "<p>We present your finished piece, polished, packaged, and ready for lifetime wear</p>",
+            "title": "Material Selection",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_QYqxhF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479327.png",
+            "title": "Final Review",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_DUnbYM",
-        "column_tWCFc9",
-        "column_rLqUbD",
-        "column_yTAqVE"
+        "column_6FNUKK",
+        "column_iBW6Tr",
+        "column_VJKrbb",
+        "column_QYqxhF"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "VIEW CUSTOM JEWELERY",
@@ -130,24 +130,17 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_3cBfAn": {
+    "image_banner_3ap8XV": {
       "type": "image-banner",
       "blocks": {
-        "heading_UdHzQ6": {
-          "type": "heading",
-          "settings": {
-            "heading": "VISIT US IN STORE",
-            "heading_size": "h1"
-          }
-        },
-        "text_MfbhEg": {
+        "text_hVFgMc": {
           "type": "text",
           "settings": {
-            "text": "",
+            "text": "VISIT OUR STORE",
             "text_style": "body"
           }
         },
-        "buttons_LkciMX": {
+        "buttons_JmEqr9": {
           "type": "buttons",
           "settings": {
             "button_label_1": "LOCATE US",
@@ -160,9 +153,8 @@
         }
       },
       "block_order": [
-        "heading_UdHzQ6",
-        "text_MfbhEg",
-        "buttons_LkciMX"
+        "text_hVFgMc",
+        "buttons_JmEqr9"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
@@ -183,7 +175,7 @@
   "order": [
     "rich_text_6hrxVC",
     "main",
-    "multicolumn_anTG7Y",
-    "image_banner_3cBfAn"
+    "multicolumn_7nzLkY",
+    "image_banner_3ap8XV"
   ]
 }
