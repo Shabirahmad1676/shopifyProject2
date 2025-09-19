@@ -30,11 +30,18 @@
       data-cascade
     {% endif %}
   >
-    {%- unless section.settings.title == blank -%}
+    {%- unless section.settings.title == blank and section.settings.subtitle == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+        {%- unless section.settings.title == blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            Custom Collection
+          </h2>
+        {%- endunless -%}
+        {%- if section.settings.subtitle != blank -%}
+          <p class="multicolumn__subtitle">
+            {{ section.settings.subtitle | escape }}
+          </p>
+        {%- endif -%}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -204,6 +211,12 @@
       "id": "title",
       "default": "t:sections.multicolumn.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "create one-of-a-kind piece that reflects your style",
+      "label": "Subtitle"
     },
     {
       "type": "select",

@@ -2,18 +2,19 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  z-index: auto;
+  top: -20%;
+  /* z-index: auto; */
   isolation: isolate;
 }
 
 .banner__box {
   text-align: center;
+  /* margin-top: -22px; */
+  background-color: transparent;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
-.banner__box.gradient {
-  transform: perspective(0);
-}
+
 
 @media only screen and (max-width: 749px) {
   .banner--content-align-mobile-right .banner__box {
@@ -163,6 +164,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  /* background-color: red  ; */
   width: 100%;
 }
 
@@ -270,10 +272,12 @@
   padding: 0;
   display: flex;
   position: relative;
+  top: -10px;
   width: 100%;
+  height: 788px;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -345,8 +349,9 @@
   align-items: center;
   text-align: center;
   width: 100%;
+  /* margin-top: 290px; */
   word-wrap: break-word;
-  z-index: 1;
+  z-index: 0;
 }
 
 .banner--mobile-bottom .banner__box {
@@ -397,6 +402,14 @@
 
 .banner__box > * + .banner__text {
   margin-top: 1.5rem;
+  color: white;
+}
+
+.banner__text p {
+  color: white;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 32px;
 }
 
 @media screen and (min-width: 750px) {
@@ -433,20 +446,43 @@
   }
 }
 
-.banner__heading {
-  margin-bottom: 0;
-}
+  .banner__heading {
+    font-family: "Poppins";
+    max-width: 648px;
+    font-weight: 300;
+    font-size: 52px;
+    /* opacity: 90%; */
+    color: white !important;
+    margin-bottom: -2%;
+  }
 
-.banner__box .banner__heading + * {
-  margin-top: 1rem;
-}
+  h2 {
+    color: white;
+  }
+
+  .banner__box .banner__heading + * {
+    margin-top: 1rem;
+    color: white;
+  }
 
 .banner__buttons {
+  /* background-color: white; */
+  margin-top: 22px;
   display: inline-flex;
   flex-wrap: wrap;
   gap: 1rem;
+  /* border-bottom: 2px solid rgba(var(--color-foreground), 0.2); */
   max-width: 45rem;
   word-break: break-word;
+}
+
+/* Remove all borders from banner buttons except border-bottom */
+.banner__buttons .button:after {
+  /* display: none; */
+}
+
+.banner__buttons .button:before {
+  display: none;
 }
 
 @media screen and (max-width: 749px) {
