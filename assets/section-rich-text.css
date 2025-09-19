@@ -68,6 +68,28 @@
   word-break: break-word;
 }
 
+/* Contact page hero buttons in one row, white background, black text */
+.shopify-section-rich_text_mDWVGj .rich-text__buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: center;
+}
+.shopify-section-rich_text_mDWVGj .rich-text__buttons .button {
+  background: #fff;
+  color: #000;
+}
+.shopify-section-rich_text_mDWVGj .rich-text__buttons .button:hover {
+  background: #f2f2f2;
+  color: #000;
+}
+
+/* Ensure hero copy is white */
+.shopify-section-rich_text_mDWVGj .rich-text__blocks,
+.shopify-section-rich_text_mDWVGj .rich-text__blocks * {
+  color: #fff;
+}
+
 .rich-text__buttons--multiple > * {
   flex-grow: 1;
   min-width: 22rem;

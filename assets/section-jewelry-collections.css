@@ -1,0 +1,177 @@
+/* Jewelry Collections Layout */
+.jewelry-collections {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.jewelry-collections__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+}
+
+.jewelry-collections__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: black;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.jewelry-collections__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: black;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.jewelry-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.jewelry-collection-card {
+  position: relative;
+  background: linear-gradient(135deg, #4a2c5a 0%, #6b3d7a 100%);
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jewelry-collection-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.jewelry-collection-card__image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.jewelry-collection-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.jewelry-collection-card:hover .jewelry-collection-card__image img {
+  transform: scale(1.05);
+}
+
+.jewelry-collection-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 3rem 2rem 2rem;
+  color: white;
+}
+
+.jewelry-collection-card__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.jewelry-collection-card__cta {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.jewelry-collection-card__cta:hover {
+  color: #ffd700;
+  text-decoration-color: #ffd700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 749px) {
+  .jewelry-collections {
+    padding: 2rem 0;
+  }
+  
+  .jewelry-collections__header {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .jewelry-collections__title {
+    font-size: 2.5rem;
+  }
+  
+  .jewelry-collections__subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .jewelry-collections__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .jewelry-collection-card {
+    min-height: 30rem;
+  }
+  
+  .jewelry-collection-card__content {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  .jewelry-collection-card__title {
+    font-size: 1.6rem;
+  }
+  
+  .jewelry-collection-card__cta {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .jewelry-collections__grid {
+    gap: 1.5rem;
+  }
+  
+  .jewelry-collection-card {
+    min-height: 35rem;
+  }
+}
+
+/* Special styling for different collection types */
+.jewelry-collection-card--diamond {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.jewelry-collection-card--cuban {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+}
+
+.jewelry-collection-card--engagement {
+  background: linear-gradient(135deg, #4a2c5a 0%, #6b3d7a 100%);
+}
+
+.jewelry-collection-card--tennis {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
