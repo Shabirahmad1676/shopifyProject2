@@ -46,7 +46,6 @@
       "type": "custom-footer",
       "name": "Custom Footer",
       "settings": {
-        "logo": "shopify://shop_images/Tamura_Jewelry_61870656-af49-4cd6-9572-e9c2e164d1f0.png",
         "description": "Tamura Jewelry, based in NYC, offers custom designs, luxury Swiss watches, and timeless elegance. Elevate your style with us!",
         "menu_quick": "main-menu",
         "menu_care": "footer",

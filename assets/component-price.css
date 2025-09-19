@@ -21,9 +21,6 @@
 .price .price-item {
   display: inline-block;
   margin: 0 1rem 0 0;
-  /* color: red; */
-  font-family: "Poppins";
-  font-weight: 400;
 }
 
 .price__regular .price-item--regular {

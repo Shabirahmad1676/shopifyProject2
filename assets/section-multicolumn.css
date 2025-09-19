@@ -1,26 +1,5 @@
 .multicolumn .title {
   margin: 0;
-  text-align: center !important;
-}
-
-.multicolumn__subtitle {
-  margin: 1rem 0 0 0;
-  /* color: red; */
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: rgba(var(--color-foreground), 0.75);
-  line-height: 1.4;
-  text-align: center !important;
-  display: block;
-  width: 100%;
-}
-
-.multicolumn__title {
-  text-align: center !important;
-}
-
-.multicolumn .title.inline-richtext {
-  text-align: center !important;
 }
 
 .multicolumn.no-heading .title {
@@ -29,19 +8,11 @@
 
 .multicolumn .title-wrapper-with-link {
   margin-top: 0;
-  text-align: center !important;
 }
 
 @media screen and (max-width: 749px) {
   .multicolumn .title-wrapper-with-link {
     margin-bottom: 3rem;
-    text-align: center !important;
-  }
-  
-  .multicolumn__subtitle {
-    font-size: 1.4rem;
-    margin: 0.8rem 0 0 0;
-    text-align: center !important;
   }
 }
 
@@ -49,7 +20,6 @@
   .multicolumn__title {
     padding-left: 5rem;
     padding-right: 5rem;
-    text-align: center !important;
   }
 }
 
@@ -61,16 +31,14 @@
 }
 
 .multicolumn-card__image-wrapper--third-width {
-  width: 92px;
-  height: 94px;
+  width: 33%;
 }
 
 .multicolumn-card__image-wrapper--half-width {
-  width: 92px;
-  height: 94px;
+  width: 50%;
 }
 
-.multicolumn-list__item.center .multicolumn-card__image-wrapper,
+.multicolumn-list__item.center .multicolumn-card__image-wrapper:not(.multicolumn-card__image-wrapper--full-width),
 .multicolumn-list__item:only-child {
   margin-left: auto;
   margin-right: auto;
@@ -78,7 +46,6 @@
 
 .multicolumn .button {
   margin-top: 1.5rem;
-  /* border-bottom: 2px solid black; */
 }
 
 @media screen and (min-width: 750px) {
@@ -233,57 +200,10 @@
   }
 }
 
-.multicolumn-list__item {
-  /* background-color: red; */
-  /* padding: 22px; */
+.multicolumn-card {
+  position: relative;
+  box-sizing: border-box;
 }
-
-/* Ensure wrapper uses flexbox for centering */
-/* Homepage icon grid only */
-.template-index .multicolumn-card__image-wrapper .media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 0 !important; /* remove forced aspect ratio */
-  height: 150px; /* set a fixed height for icons (adjust as needed) */
-}
-
-/* Make each card a vertical flexbox */
-.template-index .multicolumn-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* center horizontally */
-  justify-content: center;  /* center vertically */
-  text-align: center;       /* center text */
-  height: 100%;             /* fill available space */
-}
-
-/* Fix image wrapper sizing */
-.template-index .multicolumn-card__image-wrapper .media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   /* remove forced aspect ratio */
-  height: 80px; /* adjust box height */
-  width: 82px;  /* keep square for icons */
-  /* margin: 0 auto; */
-}
-
-/* Make sure icons are scaled and centered */
-.template-index .multicolumn-card__image {
-  max-width: 80px;  
-  max-height: 80px;
-  object-fit: contain;
-}
-
-/* Center info text below icon */
-.template-index .multicolumn-card__info {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-
-
 
 .multicolumn-card > .multicolumn-card__image-wrapper--full-width:not(.multicolumn-card-spacing) {
   border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
@@ -311,5 +231,3 @@
     display: list-item;
   }
 }
-
-
