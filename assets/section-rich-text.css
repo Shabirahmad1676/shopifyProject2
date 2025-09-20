@@ -1,11 +1,15 @@
 .rich-text {
   z-index: 1;
+  color: white;
 }
 
 .rich-text__wrapper {
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: red; */
   justify-content: center;
-  width: calc(100% - 4rem / var(--font-body-scale));
+  /* width: calc(100% - 4rem / var(--font-body-scale)); */
 }
 
 .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
@@ -13,8 +17,34 @@
   width: calc(100% - 8rem / var(--font-body-scale));
 }
 
+
+.rich-text__buttons--multiple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: auto;
+}
+
+
+
+.btn-center {
+  background-color: red;
+  width: 200px;
+  display: inline-flex;
+  /* gap: 100px; */
+  margin-right: 22px;
+  color: black;
+  font-size: 22px;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: center;
+
+}
+
 .rich-text__blocks {
-  width: 100%;
+  /* width: 100%; */
 }
 
 @media screen and (min-width: 750px) {
@@ -59,34 +89,43 @@
 }
 
 .rich-text__buttons {
-  display: inline-flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  background-color: white;
+  /* color: black; */
   gap: 1rem;
-  width: 100%;
-  max-width: 45rem;
+  width: 200px;
+  /* max-width: 400px; */
+  /* width: 100%; */
+  /* max-width: 45rem; */
   word-break: break-word;
 }
 
-/* Contact page hero buttons in one row, white background, black text */
-.shopify-section-rich_text_mDWVGj .rich-text__buttons {
+.rich-text__buttons .btn {
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+
+}
+
+/* Contact page hero: buttons in one row (white bg, black text) and white copy */
+.template-page-contact .rich-text .rich-text__buttons {
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
   justify-content: center;
 }
-.shopify-section-rich_text_mDWVGj .rich-text__buttons .button {
+.template-page-contact .rich-text .rich-text__buttons .button {
   background: #fff;
   color: #000;
 }
-.shopify-section-rich_text_mDWVGj .rich-text__buttons .button:hover {
+.template-page-contact .rich-text .rich-text__buttons .button:hover {
   background: #f2f2f2;
   color: #000;
 }
-
-/* Ensure hero copy is white */
-.shopify-section-rich_text_mDWVGj .rich-text__blocks,
-.shopify-section-rich_text_mDWVGj .rich-text__blocks * {
+.template-page-contact .rich-text .rich-text__blocks,
+.template-page-contact .rich-text .rich-text__blocks * {
   color: #fff;
 }
 

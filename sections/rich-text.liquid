@@ -54,14 +54,14 @@
                 {{ block.settings.text }}
               </div>
             {%- when 'button' -%}
+            <div class="btn-center">
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
+                {% endif %}>
                 {%- if block.settings.button_label != blank -%}
                   <a
                     {% if block.settings.button_link == blank %}
@@ -69,24 +69,14 @@
                     {% else %}
                       href="{{ block.settings.button_link }}"
                     {% endif %}
-                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                    class="btn  button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
                   >
                     {{- block.settings.button_label | escape -}}
                   </a>
                 {%- endif -%}
-                {%- if block.settings.button_label_2 != blank -%}
-                  <a
-                    {% if block.settings.button_link_2 == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.button_link_2 }}"
-                    {% endif %}
-                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
-                  >
-                    {{- block.settings.button_label_2 | escape -}}
-                  </a>
-                {%- endif -%}
+               
               </div>
+            </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>

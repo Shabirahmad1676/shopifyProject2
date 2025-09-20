@@ -2,6 +2,11 @@
   max-width: 100%;
 }
 
+.contact {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
 .contact .form__message {
   align-items: flex-start;
 }
@@ -12,6 +17,12 @@
 
 .contact .field {
   margin-bottom: 1.5rem;
+}
+
+.field {
+  border-radius: 12px;
+  /* background-color: red; */
+  padding: 8px;
 }
 
 @media screen and (min-width: 750px) {
@@ -38,6 +49,13 @@
   }
 }
 
+.contact__fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+
 /* Contact form UI enhancements */
 .contact.page-width.page-width--narrow {
   border: 1px solid #e5e5e5;
@@ -48,8 +66,10 @@
 
 .contact .field__input,
 .contact .text-area.field__input {
-  background: #fafafa;
-  border: 1px solid #ddd;
+  /* background: red; */
+  width: 100%;
+  border-radius: 12px;
+  /* border: 1px solid #ddd; */
   color: #000;
 }
 

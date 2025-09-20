@@ -98,6 +98,102 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* Transparent header styles */
+  .header-overlay {
+    background-color: transparent !important;
+    background: transparent !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10 !important;
+  }
+
+  .header-overlay .header {
+    background-color: transparent !important;
+  }
+
+  /* Ensure content doesn't overlap with transparent header */
+  .header-overlay ~ * {
+    margin-top: var(--header-height, 80px);
+  }
+
+  /* White text for home page */
+  .header-overlay .header__heading-link .h2,
+  .header-overlay .header__heading-link,
+  .header-overlay .header__menu-item,
+  .header-overlay .header__icon,
+  .header-overlay .header__icon .icon,
+  .header-overlay .header__icon span,
+  .header-overlay .header__heading-logo {
+    color: white !important;
+    fill: white !important;
+  }
+
+  .header-overlay .header__menu-item:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .header-overlay .header__heading-link:hover .h2 {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Black text for other pages */
+  .header-wrapper:not(.header-overlay) .header__heading-link .h2,
+  .header-wrapper:not(.header-overlay) .header__heading-link,
+  .header-wrapper:not(.header-overlay) .header__menu-item,
+  .header-wrapper:not(.header-overlay) .header__icon,
+  .header-wrapper:not(.header-overlay) .header__icon .icon,
+  .header-wrapper:not(.header-overlay) .header__icon span,
+  .header-wrapper:not(.header-overlay) .header__heading-logo {
+    color: rgb(var(--color-foreground)) !important;
+    fill: rgb(var(--color-foreground)) !important;
+  }
+
+  /* Sticky header adjustments for transparent header */
+  .header-overlay.shopify-section-header-sticky {
+    position: fixed !important;
+    top: 0 !important;
+  }
+
+  /* When transparent header becomes sticky, add background */
+  .header-overlay.shopify-section-header-sticky {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+
+  /* Adjust text colors when sticky transparent header gets background */
+  .header-overlay.shopify-section-header-sticky .header__heading-link .h2,
+  .header-overlay.shopify-section-header-sticky .header__heading-link,
+  .header-overlay.shopify-section-header-sticky .header__menu-item,
+  .header-overlay.shopify-section-header-sticky .header__icon,
+  .header-overlay.shopify-section-header-sticky .header__icon .icon,
+  .header-overlay.shopify-section-header-sticky .header__icon span,
+  .header-overlay.shopify-section-header-sticky .header__heading-logo {
+    color: rgb(var(--color-foreground)) !important;
+    fill: rgb(var(--color-foreground)) !important;
+  }
+
+  .header-overlay.shopify-section-header-sticky .header__menu-item:hover {
+    color: rgba(var(--color-foreground), 0.8) !important;
+  }
+
+  .header-overlay.shopify-section-header-sticky .header__heading-link:hover .h2 {
+    color: rgba(var(--color-foreground), 0.8) !important;
+  }
+
+  /* Mobile adjustments */
+  @media screen and (max-width: 749px) {
+    .header-overlay {
+      position: relative !important;
+    }
+    
+    .header-overlay ~ * {
+      margin-top: 0 !important;
+    }
+  }
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>

@@ -153,81 +153,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "multicolumn_JLtMMk": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_FHgtPn": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
-            "title": "Consulatation",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_TnwJQV": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/noun-gemstone-7096952_1_1.png",
-            "title": "Design Approval",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_MLyahM": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1707479327.png",
-            "title": "Material Selection",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_EdmYTa": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/noun-shop-7307817_1.png",
-            "title": "Final Review",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_FHgtPn",
-        "column_TnwJQV",
-        "column_MLyahM",
-        "column_EdmYTa"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "title": "Multicolumn",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "VIEW CUSTOM JEWELERY",
-        "button_link": "",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "image_with_text_qPWqaA",
     "multicolumn_nE7efH",
-    "collection_list_NQeKxT",
-    "multicolumn_JLtMMk"
+    "collection_list_NQeKxT"
   ]
 }
