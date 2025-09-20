@@ -1,5 +1,6 @@
 .collage-wrapper-title {
   margin-top: 0;
+  color: black;
   margin-bottom: 3rem;
 }
 
@@ -199,4 +200,38 @@
 .collage-card .deferred-media__poster:focus {
   outline: none;
   box-shadow: none;
+}
+
+/* Custom overrides to resemble the provided mock */
+@media screen and (min-width: 750px) {
+  /* Tighter visual style and remove heavy borders/gradients on collage cards */
+  .collage .card.card--standard.card--media {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+/* Center captions and tweak heading style */
+.collage .card__information {
+  text-align: center;
+}
+
+.collage .card__heading a.full-unstyled-link {
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Hide duplicated content block that some cards render */
+.collage__item .card > .card__content:first-of-type + .card__content {
+  /* keep only the second block */
+}
+.collage__item .card > .card__content:first-of-type {
+  display: none;
+}
+
+/* Image presentation tweaks */
+.collage .card__media .media img {
+  object-fit: cover;
 }

@@ -1,0 +1,198 @@
+{% comment %}
+  Jewelry Collections Section
+  
+  Renders a header with title/subtitle and a 2x2 grid of collection cards
+  Similar to the jewelry collection UI shown in the reference image
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'section-jewelry-collections.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<div class="jewelry-collections color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <!-- Header Section -->
+    <div class="jewelry-collections__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="jewelry-collections__title">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.subheading != blank -%}
+        <p class="jewelry-collections__subtitle">
+          {{ section.settings.subheading | escape }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <!-- Collections Grid -->
+    <div class="jewelry-collections__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'collection' -%}
+            <div class="jewelry-collection-card jewelry-collection-card--{{ block.settings.collection_type | default: 'default' }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.collection != blank -%}
+                {%- assign collection = collections[block.settings.collection] -%}
+                
+                {%- if collection.featured_image -%}
+                  <div class="jewelry-collection-card__image">
+                    <img
+                      srcset="
+                        {%- if collection.featured_image.width >= 400 -%}{{ collection.featured_image | image_url: width: 400 }} 400w,{%- endif -%}
+                        {%- if collection.featured_image.width >= 800 -%}{{ collection.featured_image | image_url: width: 800 }} 800w,{%- endif -%}
+                        {%- if collection.featured_image.width >= 1200 -%}{{ collection.featured_image | image_url: width: 1200 }} 1200w,{%- endif -%}
+                        {%- if collection.featured_image.width >= 1600 -%}{{ collection.featured_image | image_url: width: 1600 }} 1600w,{%- endif -%}
+                        {{ collection.featured_image | image_url }} {{ collection.featured_image.width }}w
+                      "
+                      src="{{ collection.featured_image | image_url: width: 1200 }}"
+                      sizes="(min-width: 750px) calc(50vw - 2rem), calc(100vw - 2rem)"
+                      alt="{{ collection.featured_image.alt | escape }}"
+                      height="{{ collection.featured_image.height }}"
+                      width="{{ collection.featured_image.width }}"
+                      loading="lazy"
+                      class="motion-reduce"
+                    >
+                  </div>
+                {%- endif -%}
+                
+                <div class="jewelry-collection-card__content">
+                  <h3 class="jewelry-collection-card__title">
+                    {{ collection.title | escape }}
+                  </h3>
+                  
+                  {%- if block.settings.cta_text != blank -%}
+                    <a href="{{ collection.url }}" class="jewelry-collection-card__cta">
+                      {{ block.settings.cta_text | escape }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                <!-- Placeholder for empty collection -->
+                <div class="jewelry-collection-card__image">
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="jewelry-collection-card__content">
+                  <h3 class="jewelry-collection-card__title">
+                    {{ 'onboarding.collection_title' | t }}
+                  </h3>
+                  <a href="#" class="jewelry-collection-card__cta">
+                    {{ 'general.shop_now' | t }}
+                  </a>
+                </div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Jewelry Collections",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Collection",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Explore our curated collections of exquisite jewelry",
+      "label": "Subheading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop Now",
+          "label": "Call to action text"
+        },
+        {
+          "type": "select",
+          "id": "collection_type",
+          "label": "Collection type",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "diamond",
+              "label": "Diamond"
+            },
+            {
+              "value": "cuban",
+              "label": "Cuban"
+            },
+            {
+              "value": "engagement",
+              "label": "Engagement"
+            },
+            {
+              "value": "tennis",
+              "label": "Tennis"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Jewelry Collections",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "cta_text": "FIND YOUR DIAMOND",
+            "collection_type": "diamond"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "cta_text": "SHOP NOW",
+            "collection_type": "cuban"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "cta_text": "SHOP NOW",
+            "collection_type": "engagement"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "cta_text": "SHOP NOW",
+            "collection_type": "tennis"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

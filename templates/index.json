@@ -191,7 +191,7 @@
           "settings": {
             "image": "shopify://shop_images/noun-consultation-7796326_1.png",
             "title": "Consulatation",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+           "text": "<p>You bring the vision, we bring the expertise</p>",
             "link_label": "",
             "link": ""
           }
@@ -201,7 +201,7 @@
           "settings": {
             "image": "shopify://shop_images/noun-gemstone-7096952_1.png",
             "title": "Design Approval",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Our designers create a 3D rendering or hand sketch for your review</p>",
             "link_label": "",
             "link": ""
           }
@@ -211,7 +211,7 @@
           "settings": {
             "image": "shopify://shop_images/noun-shop-7307817_1.png",
             "title": "Material Selection",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Choose from gold, platinum, diamonds, gemstones</p>",
             "link_label": "",
             "link": ""
           }
@@ -221,7 +221,7 @@
           "settings": {
             "image": "shopify://shop_images/Frame_1707479327.png",
             "title": "Final Review",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>We present your finished piece, polished, packaged, and ready for lifetime wear</p>",
             "link_label": "",
             "link": ""
           }
