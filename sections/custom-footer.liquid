@@ -1,123 +1,142 @@
-<!-- sections/custom-footer.liquid -->
-<section class="custom-footer" aria-label="Site footer">
-  <style>
-    .custom-footer { background:#000; color:#fff; padding:48px 16px; font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .custom-footer .wrap { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:28px; align-items:start; }
-    .custom-footer img.logo { max-width:160px; display:block; margin-bottom:12px; }
-    .custom-footer h4 { margin:0 0 12px; font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:#fff; }
-    .custom-footer p.desc { margin:0 0 16px; color:#ccc; line-height:1.5; font-size:14px; }
-    .custom-footer ul { list-style:none; margin:0; padding:0; }
-    .custom-footer ul li { margin-bottom:8px; }
-    .custom-footer a { color:#ddd; text-decoration:none; font-size:14px; }
-    .custom-footer a:hover { color:#fff; text-decoration:underline; }
-    .custom-footer .social a { margin-right:8px; display:inline-block; text-decoration:none; }
-    .custom-footer .newsletter input[type="email"] { padding:10px 12px; border-radius:20px; border:1px solid #333; background:#111; color:#fff; width:100%; box-sizing:border-box; }
-    .custom-footer .newsletter button { margin-top:8px; padding:10px 14px; border-radius:20px; border:none; background:#fff; color:#000; cursor:pointer; }
-    .custom-footer .copyright { margin-top:28px; color:#777; font-size:13px; text-align:right; }
-    @media (max-width:900px) {
-      .custom-footer .wrap { grid-template-columns: 1fr; }
-      .custom-footer .copyright { text-align:left; }
-    }
-  </style>
+  <!-- sections/custom-footer.liquid -->
+  <section class="custom-footer" aria-label="Site footer">
+    <style>
+      .custom-footer { background:#000; color:#fff; padding:48px 16px; font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+      .custom-footer .wrap { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:28px; align-items:start; }
+      .custom-footer img.logo { max-width:160px; display:block; margin-bottom:12px; }
+      .custom-footer h4 { margin:0 0 12px; font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:#fff; }
+      .custom-footer p.desc { margin:0 0 16px; color:#ccc; line-height:1.5; font-size:14px; }
+      .custom-footer ul { list-style:none; margin:0; padding:0; }
+      .custom-footer ul li { margin-bottom:8px; }
+      .custom-footer a { color:#ddd; text-decoration:none; font-size:14px; }
+      .custom-footer a:hover { color:#fff; text-decoration:underline; }
+      .custom-footer .social a { margin-right:8px; display:inline-block; text-decoration:none; }
+      /* Enhanced newsletter */
+      .custom-footer .newsletter { margin-top:8px; }
+      .custom-footer .newsletter .input-group { display:flex; gap:8px; align-items:center; }
+      .custom-footer .newsletter input[type="email"] { padding:12px 16px; border-radius:28px; border:1px solid #2a2a2a; background:#0d0d0d; color:#fff; width:100%; box-sizing:border-box; outline:none; }
+      .custom-footer .newsletter input::placeholder { color:#888; }
+      .custom-footer .newsletter input:focus { border-color:#555; box-shadow:0 0 0 2px rgba(255,255,255,0.08); }
+      .custom-footer .newsletter button { padding:12px 16px; border-radius:28px; border:none; background:#fff; color:#000; cursor:pointer; font-weight:600; }
+      .custom-footer .newsletter button:hover { background:#e6e6e6; }
+      /* Footer bottom bar with social icons */
+      .custom-footer .footer-bottom { border-top:1px solid #1a1a1a; margin-top:28px; padding-top:20px; display:flex; justify-content:space-between; align-items:center; }
+      .custom-footer .footer-bottom .social a { margin-right:12px; color:#bbb; }
+      .custom-footer .footer-bottom .social a:hover { color:#fff; }
+      .custom-footer .copyright { margin-top:28px; color:#777; font-size:13px; text-align:right; }
+      @media (max-width:900px) {
+        .custom-footer .wrap { grid-template-columns: 1fr; }
+        .custom-footer .copyright { text-align:left; }
+        .custom-footer .footer-bottom { flex-direction:column; gap:12px; align-items:flex-start; }
+      }
+    </style>
 
-  <div class="wrap">
-    <!-- Column 1: Logo, description, social -->
-    <div>
-        {% if section.settings.logo != blank %}
-  <img
-    class="logo"
-    src="{{ section.settings.logo | image_url: '400x' }}"
-    alt="{{ shop.name }}"
-    width="160"
-    height="40"
-    loading="lazy"
-    style="max-width:160px; height:auto;"
-  />
-{% endif %}
+    <div class="wrap">
+      <!-- Column 1: Logo, description, social -->
+      <div>
+          {% if section.settings.logo != blank %}
+  <img class="logo" src="{{ section.settings.logo | image_url }}" alt="Tamura Jewelry" width="59" height="40" loading="lazy" style="max-width:160px; height:auto;">
+  {% endif %}
 
-      <p class="desc">{{ section.settings.description }}</p>
+        <p class="desc">{{ section.settings.description }}</p>
+      
 
-      <div class="social">
-        {% if section.settings.social_facebook != blank %}
-          <a href="{{ section.settings.social_facebook }}" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
-        {% endif %}
-        {% if section.settings.social_instagram != blank %}
-          <a href="{{ section.settings.social_instagram }}" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
-        {% endif %}
-        {% if section.settings.social_youtube != blank %}
-          <a href="{{ section.settings.social_youtube }}" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
-        {% endif %}
-        {% if section.settings.social_tiktok != blank %}
-          <a href="{{ section.settings.social_tiktok }}" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
-        {% endif %}
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          {% assign menu = linklists[section.settings.menu_quick] %}
+          {% if menu %}
+            {% for link in menu.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+
+      <!-- Column 3: Customer Care -->
+      <div>
+        <h4>Customer Care</h4>
+        <ul>
+          {% assign menu2 = linklists[section.settings.menu_care] %}
+          {% if menu2 %}
+            {% for link in menu2.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+
+      
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div>
+        <h4>Subscribe To Our Newsletter</h4>
+        <div class="newsletter">
+          {% form 'customer' %}
+            <div class="input-group">
+              <label for="Email" class="visually-hidden">Email</label>
+              <input type="email" name="contact[email]" id="Email" placeholder="{{ section.settings.newsletter_placeholder | default: 'Enter Your Email' }}" required>
+              <button type="submit">{{ section.settings.newsletter_button | default: 'Subscribe' }}</button>
+            </div>
+          {% endform %}
+        </div>
       </div>
     </div>
 
-    <!-- Column 2: Quick Links -->
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        {% assign menu = linklists[section.settings.menu_quick] %}
-        {% if menu %}
-          {% for link in menu.links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
+    <div class="wrap">
+      <div style="grid-column: 1 / -1;">
+        <div class="footer-bottom">
+         
+          <div class="social">
+            {% if section.settings.social_facebook != blank %}
+              <a href="{{ section.settings.social_facebook }}" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.75 8.44-4.93 8.44-9.94Z"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_instagram != blank %}
+              <a href="{{ section.settings.social_instagram }}" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-2.25a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_youtube != blank %}
+              <a href="{{ section.settings.social_youtube }}" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 7.1a3.02 3.02 0 0 0-2.13-2.14C19.61 4.5 12 4.5 12 4.5s-7.61 0-9.37.46A3.02 3.02 0 0 0 .5 7.1 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .5 4.9 3.02 3.02 0 0 0 2.13 2.14C4.39 19.5 12 19.5 12 19.5s7.61 0 9.37-.46a3.02 3.02 0 0 0 2.13-2.14A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.5-4.9ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/></svg>
+              </a>
+            {% endif %}
+            {% if section.settings.social_tiktok != blank %}
+              <a href="{{ section.settings.social_tiktok }}" aria-label="TikTok" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 8.5a7.9 7.9 0 0 1-4.8-1.6V16a5.5 5.5 0 1 1-5.5-5.5c.19 0 .37.01.55.03v2.26a3.27 3.27 0 1 0 2.72 3.22V2h2.27a5.62 5.62 0 0 0 4.76 4.52V8.5Z"/></svg>
+              </a>
+            {% endif %}
+          </div>
+           <div class="copyright">{{ section.settings.copyright_text }}</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Column 3: Customer Care -->
-    <div>
-      <h4>Customer Care</h4>
-      <ul>
-        {% assign menu2 = linklists[section.settings.menu_care] %}
-        {% if menu2 %}
-          {% for link in menu2.links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-
-     
-    </div>
-
-    <!-- Column 4: Newsletter -->
-    <div>
-      <h4>Subscribe To Our Newsletter</h4>
-     {% form 'customer' %}
-  <label for="Email" class="visually-hidden">Email</label>
-  <input type="email" name="contact[email]" id="Email" placeholder="{{ section.settings.newsletter_placeholder | default: 'Enter Your Email' }}" required>
-  <button type="submit">{{ section.settings.newsletter_button | default: '→' }}</button>
-{% endform %}
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div style="grid-column: 1 / -1;">
-      <div class="copyright">{{ section.settings.copyright_text }}</div>
-    </div>
-  </div>
-</section>
-
-{% schema %}
-{
-  "name": "Custom Footer",
-  "settings": [
-    { "type": "image_picker", "id": "logo", "label": "Logo" },
-    { "type": "textarea", "id": "description", "label": "Short description", "default": "Tamura Jewelry, based in NYC, offers custom designs, luxury Swiss watches, and timeless elegance. Elevate your style with us!" },
-    { "type": "link_list", "id": "menu_quick", "label": "Quick Links menu" },
-    { "type": "link_list", "id": "menu_care", "label": "Customer Care menu" },
-    { "type": "text", "id": "hours", "label": "Hours", "default": "Monday to Saturday: 10:00AM - 7:00PM" },
-    { "type": "text", "id": "phone", "label": "Phone", "default": "(646) 720-1067" },
-    { "type": "text", "id": "address", "label": "Address", "default": "15 W 47th St, New York, NY 10036" },
-    { "type": "url", "id": "social_facebook", "label": "Facebook URL" },
-    { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
-    { "type": "url", "id": "social_youtube", "label": "YouTube URL" },
-    { "type": "url", "id": "social_tiktok", "label": "TikTok URL" },
-    { "type": "text", "id": "newsletter_placeholder", "label": "Newsletter placeholder", "default": "Enter Your Email" },
-    { "type": "text", "id": "newsletter_button", "label": "Newsletter button text", "default": "→" },
-    { "type": "text", "id": "copyright_text", "label": "Copyright text", "default": "Copyright © 2025 All rights reserved." }
-  ],
-  "presets": [{ "name": "Custom Footer", "category": "Footer" }]
-}
-{% endschema %}
+  {% schema %}
+  {
+    "name": "Custom Footer",
+    "settings": [
+      { "type": "image_picker", "id": "logo", "label": "Logo" },
+      { "type": "textarea", "id": "description", "label": "Short description", "default": "Tamura Jewelry, based in NYC, offers custom designs, luxury Swiss watches, and timeless elegance. Elevate your style with us!" },
+      { "type": "link_list", "id": "menu_quick", "label": "Quick Links menu" },
+      { "type": "link_list", "id": "menu_care", "label": "Customer Care menu" },
+      { "type": "text", "id": "hours", "label": "Hours", "default": "Monday to Saturday: 10:00AM - 7:00PM" },
+      { "type": "text", "id": "phone", "label": "Phone", "default": "(646) 720-1067" },
+      { "type": "text", "id": "address", "label": "Address", "default": "15 W 47th St, New York, NY 10036" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook URL" },
+      { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
+      { "type": "url", "id": "social_youtube", "label": "YouTube URL" },
+      { "type": "url", "id": "social_tiktok", "label": "TikTok URL" },
+      { "type": "text", "id": "newsletter_placeholder", "label": "Newsletter placeholder", "default": "Enter Your Email" },
+      { "type": "text", "id": "newsletter_button", "label": "Newsletter button text", "default": "→" },
+      { "type": "text", "id": "copyright_text", "label": "Copyright text", "default": "Copyright © 2025 All rights reserved." }
+    ],
+    "presets": [{ "name": "Custom Footer", "category": "Footer" }]
+  }
+  {% endschema %}
