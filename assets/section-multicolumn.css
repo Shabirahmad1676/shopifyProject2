@@ -282,18 +282,6 @@
   text-align: center;
 }
 
-/* Custom class for multicolumn icon images */
-.multicolumn-icon-image {
-  object-fit: none !important;
-  object-position: center center !important;
-  max-width: 100px !important;
-  max-height: 100px !important;
-  width: auto !important;
-  height: auto !important;
-  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  margin-left: 40px !important;
-  padding-bottom: -20 !important;
-}
 
 
 
