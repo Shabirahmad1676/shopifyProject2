@@ -119,68 +119,42 @@
         "padding_bottom": 36
       }
     },
-    "collage_MQiPwQ": {
-      "type": "collage",
+    "jewelry_collections_alternating": {
+      "type": "jewelry-collections-alternating",
       "blocks": {
-        "image_3keeHm": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Picture_a_collection_of_loose_diamonds_spread_on_a_stone_slab.png"
-          }
-        },
-        "collection_YkqrBL": {
+        "collection_section_1": {
           "type": "collection",
           "settings": {
-            "collection": "diamond-collection"
+            "image": "shopify://shop_images/Picture_a_collection_of_loose_diamonds_spread_on_a_stone_slab.png",
+            "collection": "diamond-collection",
+            "collection_title": "",
+            "collection_description": "",
+            "cta_text": "FIND YOUR DIAMOND",
+            "cta_link": "shopify://collections/diamond-collection",
+            "layout": "image-left"
+          }
+        },
+        "collection_section_2": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/Link_974e08e1-b2dc-4ae2-a6b6-4f6f3b208b05.png",
+            "collection": "cuban-collection",
+            "collection_title": "",
+            "collection_description": "",
+            "cta_text": "SHOP NOW",
+            "cta_link": "",
+            "layout": "image-right"
           }
         }
       },
       "block_order": [
-        "image_3keeHm",
-        "collection_YkqrBL"
+        "collection_section_1",
+        "collection_section_2"
       ],
-      "name": "t:sections.collage.presets.name",
       "settings": {
-        "heading": "Collections",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collage_HTBNCe": {
-      "type": "collage",
-      "blocks": {
-        "image_YTjVBy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Link_285c0b4a-db03-4035-a4fb-0ba3cc6ef3fc.png"
-          }
-        },
-        "collection_gKfRFN": {
-          "type": "collection",
-          "settings": {
-            "collection": "earings"
-          }
-        }
-      },
-      "block_order": [
-        "image_YTjVBy",
-        "collection_gKfRFN"
-      ],
-      "name": "t:sections.collage.presets.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Our Collections",
+        "subheading": "Discover our curated selection of exquisite jewelry",
+        "color_scheme": "scheme-1"
       }
     },
     "multicolumn_AwiDKk": {
@@ -191,7 +165,7 @@
           "settings": {
             "image": "shopify://shop_images/noun-consultation-7796326_1.png",
             "title": "Consulatation",
-           "text": "<p>You bring the vision, we bring the expertise</p>",
+            "text": "<p>You bring the vision, we bring the expertise</p>",
             "link_label": "",
             "link": ""
           }
@@ -236,6 +210,7 @@
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -249,36 +224,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "jewelry_collections_alternating": {
-      "type": "jewelry-collections-alternating",
-      "blocks": {
-        "collection_section_1": {
-          "type": "collection",
-          "settings": {
-            "collection": "diamond-collection",
-            "cta_text": "FIND YOUR DIAMOND",
-            "layout": "image-left"
-          }
-        },
-        "collection_section_2": {
-          "type": "collection",
-          "settings": {
-            "collection": "cuban-collection",
-            "cta_text": "SHOP NOW",
-            "layout": "image-right"
-          }
-        }
-      },
-      "block_order": [
-        "collection_section_1",
-        "collection_section_2"
-      ],
-      "settings": {
-        "heading": "Our Collections",
-        "subheading": "Discover our curated selection of exquisite jewelry",
-        "color_scheme": "scheme-1"
       }
     },
     "image_banner_7WeAxj": {
@@ -328,8 +273,6 @@
     "featured_collection",
     "collection_list_r3niTA",
     "jewelry_collections_alternating",
-    "collage_MQiPwQ",
-    "collage_HTBNCe",
     "multicolumn_AwiDKk",
     "image_banner_7WeAxj"
   ]
