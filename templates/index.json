@@ -97,12 +97,19 @@
           "settings": {
             "collection": "earings"
           }
+        },
+        "featured_collection_Y9x9Dt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "earings"
+          }
         }
       },
       "block_order": [
         "featured_collection_FGrpLx",
         "featured_collection_wKYzVx",
-        "featured_collection_XLT3x3"
+        "featured_collection_XLT3x3",
+        "featured_collection_Y9x9Dt"
       ],
       "custom_css": [],
       "name": "Shop By category",
