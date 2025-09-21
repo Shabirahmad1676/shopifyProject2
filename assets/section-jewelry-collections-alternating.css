@@ -182,10 +182,10 @@
   direction: ltr;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 989px) {
+/* Mobile Responsive Design */
+@media screen and (max-width: 749px) {
   .jewelry-collections-alternating {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   
   .jewelry-collections-alternating__header {
@@ -194,15 +194,123 @@
   }
   
   .jewelry-collections-alternating__title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
   }
   
   .jewelry-collections-alternating__subtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
   }
   
   .jewelry-collections-alternating__sections {
     padding: 0 1rem;
+  }
+  
+  .jewelry-collection-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .jewelry-collection-section__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+  
+  .jewelry-collection-section__image {
+    min-height: 25rem;
+    width: 100%;
+    order: 1;
+  }
+  
+  .jewelry-collection-section__content {
+    order: 2;
+    padding: 0.5rem;
+  }
+  
+  .jewelry-collection-section__content-wrapper {
+    max-width: 100%;
+  }
+  
+  .jewelry-collection-section__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  
+  .jewelry-collection-section__description {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .jewelry-collection-section__cta {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid currentColor;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .jewelry-collection-section__cta:hover {
+    background-color: currentColor;
+    color: white;
+  }
+  
+  .jewelry-collection-section__collection-image {
+    max-width: 12rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Reset direction for mobile */
+  .jewelry-collection-section--image-right .jewelry-collection-section__container {
+    direction: ltr;
+  }
+  
+  /* Enhanced mobile touch interactions */
+  .jewelry-collection-section__cta {
+    min-height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Better spacing for mobile */
+  .jewelry-collection-section__content-wrapper {
+    padding: 0 1rem;
+  }
+  
+  /* Improved image aspect ratio for mobile */
+  .jewelry-collection-section__image {
+    aspect-ratio: 16/10;
+    border-radius: 0.8rem;
+    overflow: hidden;
+  }
+}
+
+/* Tablet Responsive Design */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .jewelry-collections-alternating {
+    padding: 2.5rem 0;
+  }
+  
+  .jewelry-collections-alternating__header {
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+  }
+  
+  .jewelry-collections-alternating__title {
+    font-size: 3rem;
+  }
+  
+  .jewelry-collections-alternating__subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .jewelry-collections-alternating__sections {
+    padding: 0 1.5rem;
   }
   
   .jewelry-collection-section {
@@ -211,12 +319,13 @@
   
   .jewelry-collection-section__container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     min-height: auto;
   }
   
   .jewelry-collection-section__image {
-    min-height: 30rem;
+    min-height: 35rem;
+    width: 100%;
     order: 1;
   }
   
@@ -225,40 +334,35 @@
     padding: 1rem;
   }
   
+  .jewelry-collection-section__content-wrapper {
+    max-width: 50rem;
+  }
+  
   .jewelry-collection-section__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
   }
   
   .jewelry-collection-section__description {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
   .jewelry-collection-section__cta {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   
   .jewelry-collection-section__collection-image {
-    max-width: 15rem;
+    max-width: 18rem;
     margin-bottom: 1.5rem;
   }
   
-  /* Reset direction for mobile */
+  /* Reset direction for tablet */
   .jewelry-collection-section--image-right .jewelry-collection-section__container {
     direction: ltr;
   }
 }
 
-@media screen and (min-width: 750px) and (max-width: 989px) {
-  .jewelry-collection-section__container {
-    gap: 3rem;
-  }
-  
-  .jewelry-collection-section__image {
-    min-height: 35rem;
-  }
-}
 
 /* Dark theme support */
 .jewelry-collections-alternating.color-scheme-2 {

@@ -280,6 +280,20 @@
   z-index: 10;
 }
 
+/* Mobile responsive banner content height */
+@media screen and (max-width: 749px) {
+  .banner__content {
+    height: 210px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .banner__content {
+    height: 500px;
+    padding: 3rem 2rem;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .banner__content {
     padding: 5rem;
@@ -338,7 +352,7 @@
 
   .banner:not(.banner--mobile-bottom) .field__input,
   .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-scheme-1 {
-    background: transparent;
+    background: black;
   }
 }
 
