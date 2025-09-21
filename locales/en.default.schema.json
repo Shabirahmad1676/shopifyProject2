@@ -635,6 +635,9 @@
         "columns_desktop": {
           "label": "Columns"
         },
+        "enable_desktop_slider": {
+          "label": "Enable desktop slider"
+        },
         "show_view_all": {
           "label": "\"View all\" button",
           "info": "Visible if list has more collections than shown"
