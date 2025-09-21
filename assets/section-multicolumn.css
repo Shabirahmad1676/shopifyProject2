@@ -106,10 +106,7 @@
   height: 100%;
 }
 
-.multicolumn.background-primary .multicolumn-card {
-  background: rgb(var(--color-background))
-    linear-gradient(rgba(var(--color-foreground), 0.04), rgba(var(--color-foreground), 0.04));
-}
+
 
 .multicolumn-list h3 {
   line-height: calc(1 + 0.5 / max(1, var(--font-heading-scale)));
@@ -259,7 +256,7 @@
 }
 
 /* Fix image wrapper sizing */
-.template-index .multicolumn-card__image-wrapper .media {
+.template-index .multicolumn-card__image-wrapper .media  {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -267,19 +264,35 @@
   height: 80px; /* adjust box height */
   width: 82px;  /* keep square for icons */
   /* margin: 0 auto; */
+
 }
 
 /* Make sure icons are scaled and centered */
-.template-index .multicolumn-card__image {
+.template-index .multicolumn-card__image > img{
   max-width: 80px;  
   max-height: 80px;
-  object-fit: contain;
+  object-fit: none !important;
+  object-position: center center;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Center info text below icon */
 .template-index .multicolumn-card__info {
   margin-top: 1rem;
   text-align: center;
+}
+
+/* Custom class for multicolumn icon images */
+.multicolumn-icon-image {
+  object-fit: none !important;
+  object-position: center center !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  width: auto !important;
+  height: auto !important;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-left: 40px !important;
+  padding-bottom: -20 !important;
 }
 
 
