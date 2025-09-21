@@ -1,10 +1,12 @@
 .collection-list {
   margin-top: 0;
   margin-bottom: 0;
+  justify-content: center;
 }
 
 .collection-list-title {
   margin: 0;
+  justify-content: center;
 }
 
 @media screen and (max-width: 749px) {
