@@ -1,0 +1,280 @@
+/* Jewelry Collections Alternating Layout */
+.jewelry-collections-alternating {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.jewelry-collections-alternating__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+}
+
+.jewelry-collections-alternating__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: black;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.jewelry-collections-alternating__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: black;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.jewelry-collections-alternating__sections {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+
+.jewelry-collection-section:last-child {
+  margin-bottom: 0;
+}
+
+.jewelry-collection-section__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 50rem;
+}
+
+.jewelry-collection-section__image {
+  position: relative;
+  height: 100%;
+  min-height: 40rem;
+  width: 53rem;
+}
+
+.jewelry-collection-section__image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #4a2c5a 0%, #6b3d7a 100%);
+  position: relative;
+}
+
+.jewelry-collection-section__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.jewelry-collection-section__image:hover .jewelry-collection-section__img {
+  transform: scale(1.05);
+}
+
+.jewelry-collection-section__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4a2c5a 0%, #6b3d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.jewelry-collection-section__placeholder-content {
+  text-align: center;
+  opacity: 0.7;
+}
+
+.jewelry-collection-section__placeholder-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  stroke: currentColor;
+}
+
+.jewelry-collection-section__placeholder-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.jewelry-collection-section__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.jewelry-collection-section__content-wrapper {
+  text-align: center;
+  max-width: 40rem;
+}
+
+.jewelry-collection-section__collection-image {
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.jewelry-collection-section__collection-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.jewelry-collection-section__collection-image:hover .jewelry-collection-section__collection-img {
+  transform: scale(1.05);
+}
+
+.jewelry-collection-section__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: black;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+}
+
+.jewelry-collection-section__description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: black;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.jewelry-collection-section__cta {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.jewelry-collection-section__cta:hover {
+  color: #4a2c5a;
+  text-decoration-color: #4a2c5a;
+}
+
+/* Layout variations */
+.jewelry-collection-section--image-right .jewelry-collection-section__container {
+  direction: rtl;
+}
+
+.jewelry-collection-section--image-right .jewelry-collection-section__content-wrapper {
+  direction: ltr;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 989px) {
+  .jewelry-collections-alternating {
+    padding: 2rem 0;
+  }
+  
+  .jewelry-collections-alternating__header {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .jewelry-collections-alternating__title {
+    font-size: 2.5rem;
+  }
+  
+  .jewelry-collections-alternating__subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .jewelry-collections-alternating__sections {
+    padding: 0 1rem;
+  }
+  
+  .jewelry-collection-section {
+    margin-bottom: 3rem;
+  }
+  
+  .jewelry-collection-section__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+  
+  .jewelry-collection-section__image {
+    min-height: 30rem;
+    order: 1;
+  }
+  
+  .jewelry-collection-section__content {
+    order: 2;
+    padding: 1rem;
+  }
+  
+  .jewelry-collection-section__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .jewelry-collection-section__description {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .jewelry-collection-section__cta {
+    font-size: 1.2rem;
+  }
+  
+  .jewelry-collection-section__collection-image {
+    max-width: 15rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Reset direction for mobile */
+  .jewelry-collection-section--image-right .jewelry-collection-section__container {
+    direction: ltr;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .jewelry-collection-section__container {
+    gap: 3rem;
+  }
+  
+  .jewelry-collection-section__image {
+    min-height: 35rem;
+  }
+}
+
+/* Dark theme support */
+.jewelry-collections-alternating.color-scheme-2 {
+  background-color: #1a1a1a;
+}
+
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collections-alternating__title,
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collections-alternating__subtitle,
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collection-section__title,
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collection-section__description,
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collection-section__cta {
+  color: white;
+}
+
+.jewelry-collections-alternating.color-scheme-2 .jewelry-collection-section__cta:hover {
+  color: #ffd700;
+  text-decoration-color: #ffd700;
+}

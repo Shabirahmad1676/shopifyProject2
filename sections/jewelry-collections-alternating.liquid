@@ -1,0 +1,243 @@
+{% comment %}
+  Jewelry Collections Alternating Section
+  
+  Renders alternating layout sections with images and collection information
+  Similar to the jewelry collection UI shown in the reference image
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'section-jewelry-collections-alternating.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<div class="jewelry-collections-alternating color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <!-- Header Section -->
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="jewelry-collections-alternating__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="jewelry-collections-alternating__title">
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- endif -%}
+        
+        {%- if section.settings.subheading != blank -%}
+          <p class="jewelry-collections-alternating__subtitle">
+            {{ section.settings.subheading | escape }}
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <!-- Alternating Collections -->
+    <div class="jewelry-collections-alternating__sections">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'collection' -%}
+            <div class="jewelry-collection-section jewelry-collection-section--{{ block.settings.layout }}" {{ block.shopify_attributes }}>
+              <div class="jewelry-collection-section__container">
+                
+                <!-- Image Side -->
+                <div class="jewelry-collection-section__image">
+                  {%- if block.settings.image != blank -%}
+                    <div class="jewelry-collection-section__image-wrapper">
+                      <img
+                        src="{{ block.settings.image | image_url: width: 800 }}"
+                        alt="{{ block.settings.image.alt | escape }}"
+                        class="jewelry-collection-section__img"
+                        loading="lazy"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                      >
+                    </div>
+                  {%- else -%}
+                    <div class="jewelry-collection-section__placeholder">
+                      <div class="jewelry-collection-section__placeholder-content">
+                        <svg class="jewelry-collection-section__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                          <circle cx="8.5" cy="8.5" r="1.5"/>
+                          <polyline points="21,15 16,10 5,21"/>
+                        </svg>
+                        <p>Add an image</p>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+
+                <!-- Content Side -->
+                <div class="jewelry-collection-section__content">
+                  <div class="jewelry-collection-section__content-wrapper">
+                    {%- if block.settings.collection != blank -%}
+                      {%- assign collection = collections[block.settings.collection] -%}
+                      {%- if collection != blank -%}
+                        <!-- Collection Image -->
+                        {%- if collection.featured_image != blank -%}
+                          <div class="jewelry-collection-section__collection-image">
+                            <img
+                              src="{{ collection.featured_image | image_url: width: 300 }}"
+                              alt="{{ collection.featured_image.alt | escape }}"
+                              class="jewelry-collection-section__collection-img"
+                              loading="lazy"
+                              width="{{ collection.featured_image.width }}"
+                              height="{{ collection.featured_image.height }}"
+                            >
+                          </div>
+                        {%- endif -%}
+                        
+                        <!-- Collection Title -->
+                        <h3 class="jewelry-collection-section__title">
+                          {{ collection.title | escape }}
+                        </h3>
+                        
+                        <!-- Collection Description -->
+                        {%- if collection.description != blank -%}
+                          <p class="jewelry-collection-section__description">
+                            {{ collection.description | strip_html | truncate: 150 }}
+                          </p>
+                        {%- elsif block.settings.collection_description != blank -%}
+                          <p class="jewelry-collection-section__description">
+                            {{ block.settings.collection_description | escape }}
+                          </p>
+                        {%- endif -%}
+                        
+                        <!-- CTA Button -->
+                        {%- if block.settings.cta_text != blank -%}
+                          <a href="{{ collection.url }}" class="jewelry-collection-section__cta">
+                            {{ block.settings.cta_text | escape }}
+                          </a>
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- else -%}
+                      <!-- Fallback content when no collection is selected -->
+                      {%- if block.settings.collection_title != blank -%}
+                        <h3 class="jewelry-collection-section__title">
+                          {{ block.settings.collection_title | escape }}
+                        </h3>
+                      {%- endif -%}
+                      
+                      {%- if block.settings.collection_description != blank -%}
+                        <p class="jewelry-collection-section__description">
+                          {{ block.settings.collection_description | escape }}
+                        </p>
+                      {%- endif -%}
+                      
+                      {%- if block.settings.cta_text != blank and block.settings.cta_link != blank -%}
+                        <a href="{{ block.settings.cta_link }}" class="jewelry-collection-section__cta">
+                          {{ block.settings.cta_text | escape }}
+                        </a>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Jewelry Collections Alt",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Collections",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Discover our curated selection of exquisite jewelry",
+      "label": "Subheading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Section",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection (optional - uses collection data if selected)"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Custom title (fallback if no collection)"
+        },
+        {
+          "type": "textarea",
+          "id": "collection_description",
+          "label": "Custom description (fallback if no collection)"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "SHOP NOW",
+          "label": "Call to action text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Custom CTA link (fallback if no collection)"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "image-left",
+              "label": "Image left, content right"
+            },
+            {
+              "value": "image-right",
+              "label": "Image right, content left"
+            }
+          ],
+          "default": "image-left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Jewelry Collections Alt",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "collection": "diamond-collection",
+            "cta_text": "FIND YOUR DIAMOND",
+            "layout": "image-left"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "collection": "cuban-collection",
+            "cta_text": "SHOP NOW",
+            "layout": "image-right"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

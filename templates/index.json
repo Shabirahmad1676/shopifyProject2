@@ -251,6 +251,36 @@
         "padding_bottom": 36
       }
     },
+    "jewelry_collections_alternating": {
+      "type": "jewelry-collections-alternating",
+      "blocks": {
+        "collection_section_1": {
+          "type": "collection",
+          "settings": {
+            "collection": "diamond-collection",
+            "cta_text": "FIND YOUR DIAMOND",
+            "layout": "image-left"
+          }
+        },
+        "collection_section_2": {
+          "type": "collection",
+          "settings": {
+            "collection": "cuban-collection",
+            "cta_text": "SHOP NOW",
+            "layout": "image-right"
+          }
+        }
+      },
+      "block_order": [
+        "collection_section_1",
+        "collection_section_2"
+      ],
+      "settings": {
+        "heading": "Our Collections",
+        "subheading": "Discover our curated selection of exquisite jewelry",
+        "color_scheme": "scheme-1"
+      }
+    },
     "image_banner_7WeAxj": {
       "type": "image-banner",
       "blocks": {
@@ -297,6 +327,7 @@
     "image_banner",
     "featured_collection",
     "collection_list_r3niTA",
+    "jewelry_collections_alternating",
     "collage_MQiPwQ",
     "collage_HTBNCe",
     "multicolumn_AwiDKk",
