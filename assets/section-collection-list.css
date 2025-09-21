@@ -57,7 +57,7 @@
 
 .collection-list-wrapper .slider-buttons {
   position: absolute;
-  top: 50%;
+  top: 25%;
   transform: translateY(-50%);
   width: 100%;
   display: flex;
@@ -66,7 +66,11 @@
   z-index: 2;
   padding: 0 2rem;
 }
-
+@media screen and (max-width: 749px) {
+  .collection-list-wrapper .slider-buttons {
+    top: 40%;
+  }
+}
 .collection-list-wrapper .slider-buttons .slider-button {
   position: relative;
   width: 3.5rem;
@@ -173,4 +177,9 @@
 
 .collection-list-view-all {
   margin-top: 2rem;
+}
+@media screen and (min-width: 990px) {
+  .collection-list .collection-list__item:nth-child(n+5) {
+    display: none !important;
+  }
 }
