@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Tamura_Jewelry_61870656-af49-4cd6-9572-e9c2e164d1f0.png",
+    "logo": "shopify://shop_images/ec6085b20c7649995c86dd8cda870326f43fde3f.png",
     "logo_width": 50,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
@@ -147,7 +147,7 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#121212",
+          "text": "#ffffff",
           "button": "#121212",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",

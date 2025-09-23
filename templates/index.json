@@ -36,7 +36,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/2025_BOR_16Stones_VIDEO_16x9_1-2.png",
+        "image": "shopify://shop_images/44cf901bb86e45ce6d49c7f6d3af266b223f02ef.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
@@ -52,7 +52,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "featured-collections",
         "products_to_show": 8,
         "title": "",
         "heading_size": "h2",
@@ -83,7 +83,7 @@
         "featured_collection_FGrpLx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "rings"
+            "collection": "featured-collections"
           }
         },
         "featured_collection_wKYzVx": {
@@ -95,13 +95,13 @@
         "featured_collection_XLT3x3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "earings"
+            "collection": "pendants"
           }
         },
         "featured_collection_Y9x9Dt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "earings"
+            "collection": "earrings"
           }
         }
       },
@@ -117,7 +117,7 @@
         "title": "Shop By Category",
         "heading_size": "hxl",
         "image_ratio": "square",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "enable_desktop_slider": true,
         "color_scheme": "",
         "show_view_all": false,
@@ -133,8 +133,8 @@
         "collection_section_1": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/Picture_a_collection_of_loose_diamonds_spread_on_a_stone_slab.png",
-            "collection": "diamond-collection",
+            "image": "shopify://shop_images/c9514c1f47901d2413166e41ae9bee68c8484258.png",
+            "collection": "diamond",
             "collection_title": "",
             "collection_description": "",
             "cta_text": "FIND YOUR DIAMOND",
@@ -145,8 +145,8 @@
         "collection_section_2": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/Link_974e08e1-b2dc-4ae2-a6b6-4f6f3b208b05.png",
-            "collection": "cuban-collection",
+            "image": "shopify://shop_images/9fbd0ce65178003dcbe2c765ee1619bf07a8b5a7.jpg",
+            "collection": "cuban",
             "collection_title": "",
             "collection_description": "",
             "cta_text": "SHOP NOW",
@@ -171,8 +171,8 @@
         "column_98rHpn": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
-            "title": "Consulatation",
+            "image": "shopify://shop_images/noun-consultation-7796326_1.svg",
+            "title": "Consultation",
             "text": "<p>You bring the vision, we bring the expertise</p>",
             "link_label": "",
             "link": ""
@@ -181,7 +181,7 @@
         "column_hJFE8N": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-gemstone-7096952_1.png",
+            "image": "shopify://shop_images/Frame_1707479327.svg",
             "title": "Design Approval",
             "text": "<p>Our designers create a 3D rendering or hand sketch for your review</p>",
             "link_label": "",
@@ -191,7 +191,7 @@
         "column_h9haUN": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-shop-7307817_1.png",
+            "image": "shopify://shop_images/noun-gemstone-7096952_1.svg",
             "title": "Material Selection",
             "text": "<p>Choose from gold, platinum, diamonds, gemstones</p>",
             "link_label": "",
@@ -201,7 +201,7 @@
         "column_C3yfRk": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707479327.png",
+            "image": "shopify://shop_images/noun-shop-7307817_1.svg",
             "title": "Final Review",
             "text": "<p>We present your finished piece, polished, packaged, and ready for lifetime wear</p>",
             "link_label": "",
@@ -262,7 +262,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Picture_Blue_Nile_Store.png",
+        "image": "shopify://shop_images/61ef935db0435462387b00ce84ba14643c2bd536.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
