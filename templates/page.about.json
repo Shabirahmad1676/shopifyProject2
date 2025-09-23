@@ -41,7 +41,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Background.png",
+        "image": "shopify://shop_images/db72db6886ae8123f005db1efa15663c22f87772.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -62,7 +62,7 @@
         "column_Gx3RAj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png",
+            "image": "shopify://shop_images/ca806ff797d49a34d5ce045f3a4b5ec34db3e826.png",
             "title": "THE WAY FORWARD",
             "text": "<p>At Tamura Jewelry, we merge luxury with sustainability. Our commitment to ethically sourced, exquisite craftsmanship ensures every piece is a timeless investment in both beauty and the planet’s future. Each design reflects our dedication to creating jewelry that lasts a lifetime, with a positive impact.</p>",
             "link_label": "",
@@ -72,7 +72,7 @@
         "column_yJntWc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png",
+            "image": "shopify://shop_images/db72db6886ae8123f005db1efa15663c22f87772.png",
             "title": "WE LOVE DIAMONDS",
             "text": "<p>Our diamonds are carefully selected, offering unmatched brilliance and clarity. Whether lab-grown or natural, each stone is chosen for its exceptional quality and ethical sourcing. We pride ourselves on offering diamonds that sparkle with integrity, creating pieces that last a lifetime while staying true to our sustainable values.</p>",
             "link_label": "",
@@ -82,7 +82,7 @@
         "column_xr4dWH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Figure_stackables_veto_square-small_png.png",
+            "image": "shopify://shop_images/Link_f23127c3-0874-4a35-9291-39cbe0932f5c.png",
             "title": "SHAPING THE FUTURE OF JEWELERY",
             "text": "<p>Innovation and sustainability drive Tamura Jewelry forward. As a brand, we are proud to lead the industry in crafting luxury jewelry that honors both timeless design and environmental responsibility. Together, we are shaping a brighter future for fine jewelry—one that respects both the wearer and the world.</p>",
             "link_label": "",
@@ -114,46 +114,157 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_NQeKxT": {
-      "type": "collection-list",
+    "shop_by_category_jf4X6t": {
+      "type": "shop-by-category",
       "blocks": {
-        "featured_collection_wTBqL4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "rings"
-          }
-        },
-        "featured_collection_xWYwQU": {
-          "type": "featured_collection",
+        "category_44Tai6": {
+          "type": "category",
           "settings": {
             "collection": "bracelets"
           }
         },
-        "featured_collection_4FanVJ": {
-          "type": "featured_collection",
+        "category_af4pPc": {
+          "type": "category",
           "settings": {
-            "collection": "earings"
+            "collection": "cuban"
+          }
+        },
+        "category_F7FYQe": {
+          "type": "category",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "category_BQiDFp": {
+          "type": "category",
+          "settings": {
+            "collection": "featured-collections"
           }
         }
       },
       "block_order": [
-        "featured_collection_wTBqL4",
-        "featured_collection_xWYwQU",
-        "featured_collection_4FanVJ"
+        "category_44Tai6",
+        "category_af4pPc",
+        "category_F7FYQe",
+        "category_BQiDFp"
       ],
-      "name": "Shop By category",
+      "name": "Shop by Category",
       "settings": {
-        "title": "SHOP",
+        "title": "Shop",
         "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "enable_desktop_slider": false,
         "color_scheme": "",
-        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_7w7CxP": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WWD7qT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-consultation-7796326_1.svg",
+            "title": "Consultation",
+            "text": "<p>You bring the vision, we bring the expertise</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7whcmX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479327.svg",
+            "title": "Design Approval",
+            "text": "<p>Our designers create a 3D rendering or hand sketch for your review</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_r3Aaqt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-gemstone-7096952_1.svg",
+            "title": "Material Selection",
+            "text": "<p>Choose from gold, platinum, diamonds, gemstones</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hdtckG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/noun-shop-7307817_1.svg",
+            "title": "Final Review",
+            "text": "<p>We present your finished piece, polished, packaged, and ready for lifetime wear</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WWD7qT",
+        "column_7whcmX",
+        "column_r3Aaqt",
+        "column_hdtckG"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "VIEW CUSTOM JEWELERY",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "image_banner_mtFzwG": {
+      "type": "image-banner",
+      "blocks": {
+        "text_6wUAK9": {
+          "type": "text",
+          "settings": {
+            "text": "VISIT OUR STORE",
+            "text_style": "body"
+          }
+        },
+        "buttons_FWYdeE": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "LOCATE US",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_6wUAK9",
+        "buttons_FWYdeE"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/61ef935db0435462387b00ce84ba14643c2bd536.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     }
   },
@@ -161,6 +272,8 @@
     "main",
     "image_with_text_qPWqaA",
     "multicolumn_nE7efH",
-    "collection_list_NQeKxT"
+    "shop_by_category_jf4X6t",
+    "multicolumn_7w7CxP",
+    "image_banner_mtFzwG"
   ]
 }
