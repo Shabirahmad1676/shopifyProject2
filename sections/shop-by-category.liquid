@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      {%- if section.blocks.size > 4 -%}
+      {%- if section.blocks.size > 1 -%}
         <div class="shop-by-category-navigation">
           <button
             type="button"
@@ -116,41 +116,160 @@
     const prevBtn = slider.parentElement.querySelector('.shop-by-category-nav--prev');
     const nextBtn = slider.parentElement.querySelector('.shop-by-category-nav--next');
     
-    if (!slider || items.length <= 4) return;
+    if (!slider || items.length <= 1) return;
     
     let currentIndex = 0;
-    const itemsPerView = 4;
-    const totalItems = items.length;
-    const maxIndex = Math.max(0, totalItems - itemsPerView);
+    let itemsPerView = 4;
+    let totalItems = items.length;
+    let maxIndex = Math.max(0, totalItems - itemsPerView);
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let initialTranslate = 0;
+    
+    // Update items per view based on screen size
+    function updateItemsPerView() {
+      if (window.innerWidth <= 479) {
+        itemsPerView = 1;
+      } else if (window.innerWidth <= 749) {
+        itemsPerView = 2;
+      } else {
+        itemsPerView = 4;
+      }
+      maxIndex = Math.max(0, totalItems - itemsPerView);
+      
+      // Adjust current index if it's beyond the new max
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+      
+      updateSlider();
+    }
     
     function updateSlider() {
       const translateX = -currentIndex * (100 / itemsPerView);
       track.style.transform = `translateX(${translateX}%)`;
       
-      if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-      if (nextBtn) nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+      // Update button states
+      if (prevBtn) {
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        prevBtn.disabled = currentIndex === 0;
+      }
+      if (nextBtn) {
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        nextBtn.disabled = currentIndex >= maxIndex;
+      }
+      
+      // Debug log
+      console.log('Slider updated:', {
+        currentIndex,
+        itemsPerView,
+        maxIndex,
+        translateX,
+        totalItems
+      });
     }
     
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlider();
+    // Navigation functions
+    function goToPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    }
+    
+    function goToNext() {
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSlider();
+      }
+    }
+    
+    // Touch/Mouse event handlers
+    function handleStart(e) {
+      isDragging = true;
+      startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+      currentX = startX;
+      initialTranslate = -currentIndex * (100 / itemsPerView);
+      track.style.transition = 'none';
+    }
+    
+    function handleMove(e) {
+      if (!isDragging) return;
+      
+      e.preventDefault();
+      currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+      const diffX = currentX - startX;
+      const translateX = initialTranslate + (diffX / track.offsetWidth) * 100;
+      
+      // Limit the drag range
+      const minTranslate = -maxIndex * (100 / itemsPerView);
+      const maxTranslate = 0;
+      const limitedTranslate = Math.max(minTranslate, Math.min(maxTranslate, translateX));
+      
+      track.style.transform = `translateX(${limitedTranslate}%)`;
+    }
+    
+    function handleEnd() {
+      if (!isDragging) return;
+      
+      isDragging = false;
+      track.style.transition = '';
+      
+      const diffX = currentX - startX;
+      const threshold = track.offsetWidth * 0.1; // 10% of slider width
+      
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0 && currentIndex > 0) {
+          goToPrev();
+        } else if (diffX < 0 && currentIndex < maxIndex) {
+          goToNext();
+        } else {
+          updateSlider(); // Snap back to current position
         }
+      } else {
+        updateSlider(); // Snap back to current position
+      }
+    }
+    
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToPrev();
       });
     }
     
     if (nextBtn) {
-      nextBtn.addEventListener('click', function() {
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          updateSlider();
-        }
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToNext();
       });
     }
     
+    // Touch events for mobile
+    track.addEventListener('touchstart', handleStart, { passive: false });
+    track.addEventListener('touchmove', handleMove, { passive: false });
+    track.addEventListener('touchend', handleEnd);
+    
+    // Mouse events for desktop
+    track.addEventListener('mousedown', handleStart);
+    track.addEventListener('mousemove', handleMove);
+    track.addEventListener('mouseup', handleEnd);
+    track.addEventListener('mouseleave', handleEnd);
+    
+    // Prevent image drag
+    track.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', updateItemsPerView);
+    
     // Initialize
-    updateSlider();
+    updateItemsPerView();
   });
 </script>
 
