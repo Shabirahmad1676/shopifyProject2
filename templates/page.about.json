@@ -41,7 +41,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Picture_diamond_engagement_rings.png",
+        "image": "shopify://shop_images/Background.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -62,7 +62,7 @@
         "column_Gx3RAj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png",
+            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png",
             "title": "THE WAY FORWARD",
             "text": "<p>At Tamura Jewelry, we merge luxury with sustainability. Our commitment to ethically sourced, exquisite craftsmanship ensures every piece is a timeless investment in both beauty and the planet’s future. Each design reflects our dedication to creating jewelry that lasts a lifetime, with a positive impact.</p>",
             "link_label": "",
@@ -72,7 +72,7 @@
         "column_yJntWc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png",
+            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png",
             "title": "WE LOVE DIAMONDS",
             "text": "<p>Our diamonds are carefully selected, offering unmatched brilliance and clarity. Whether lab-grown or natural, each stone is chosen for its exceptional quality and ethical sourcing. We pride ourselves on offering diamonds that sparkle with integrity, creating pieces that last a lifetime while staying true to our sustainable values.</p>",
             "link_label": "",
@@ -82,7 +82,7 @@
         "column_xr4dWH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Fiery0_40ct.png",
+            "image": "shopify://shop_images/Figure_stackables_veto_square-small_png.png",
             "title": "SHAPING THE FUTURE OF JEWELERY",
             "text": "<p>Innovation and sustainability drive Tamura Jewelry forward. As a brand, we are proud to lead the industry in crafting luxury jewelry that honors both timeless design and environmental responsibility. Together, we are shaping a brighter future for fine jewelry—one that respects both the wearer and the world.</p>",
             "link_label": "",
@@ -98,6 +98,7 @@
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -146,6 +147,7 @@
         "heading_size": "h1",
         "image_ratio": "square",
         "columns_desktop": 3,
+        "enable_desktop_slider": false,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",
