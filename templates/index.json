@@ -77,6 +77,56 @@
         "padding_bottom": 36
       }
     },
+    "shop_by_category_36qDkQ": {
+      "type": "shop-by-category",
+      "blocks": {
+        "category_e7UMeQ": {
+          "type": "category",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "category_9CniDK": {
+          "type": "category",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "category_UefkYQ": {
+          "type": "category",
+          "settings": {
+            "collection": "pendants"
+          }
+        },
+        "category_rYeCEi": {
+          "type": "category",
+          "settings": {
+            "collection": "featured-collections"
+          }
+        },
+        "category_KcDpVq": {
+          "type": "category",
+          "settings": {
+            "collection": "featured-collections"
+          }
+        }
+      },
+      "block_order": [
+        "category_e7UMeQ",
+        "category_9CniDK",
+        "category_UefkYQ",
+        "category_rYeCEi",
+        "category_KcDpVq"
+      ],
+      "name": "Shop by Category",
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "jewelry_collections_alternating": {
       "type": "jewelry-collections-alternating",
       "blocks": {
@@ -88,7 +138,7 @@
             "collection_title": "",
             "collection_description": "",
             "cta_text": "FIND YOUR DIAMOND",
-            "cta_link": "shopify://collections/diamond-collection",
+            "cta_link": "shopify://collections/diamond",
             "layout": "image-left"
           }
         },
@@ -100,7 +150,7 @@
             "collection_title": "",
             "collection_description": "",
             "cta_text": "SHOP NOW",
-            "cta_link": "",
+            "cta_link": "shopify://collections/cuban",
             "layout": "image-right"
           }
         }
@@ -223,56 +273,6 @@
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": true
-      }
-    },
-    "shop_by_category_36qDkQ": {
-      "type": "shop-by-category",
-      "blocks": {
-        "category_e7UMeQ": {
-          "type": "category",
-          "settings": {
-            "collection": "bracelets"
-          }
-        },
-        "category_9CniDK": {
-          "type": "category",
-          "settings": {
-            "collection": "earrings"
-          }
-        },
-        "category_UefkYQ": {
-          "type": "category",
-          "settings": {
-            "collection": "pendants"
-          }
-        },
-        "category_rYeCEi": {
-          "type": "category",
-          "settings": {
-            "collection": "featured-collections"
-          }
-        },
-        "category_KcDpVq": {
-          "type": "category",
-          "settings": {
-            "collection": "featured-collections"
-          }
-        }
-      },
-      "block_order": [
-        "category_e7UMeQ",
-        "category_9CniDK",
-        "category_UefkYQ",
-        "category_rYeCEi",
-        "category_KcDpVq"
-      ],
-      "name": "Shop by Category",
-      "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },

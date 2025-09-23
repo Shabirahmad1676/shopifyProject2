@@ -123,12 +123,6 @@
             "collection": "bracelets"
           }
         },
-        "category_af4pPc": {
-          "type": "category",
-          "settings": {
-            "collection": "cuban"
-          }
-        },
         "category_F7FYQe": {
           "type": "category",
           "settings": {
@@ -140,13 +134,19 @@
           "settings": {
             "collection": "featured-collections"
           }
+        },
+        "category_k4kVmi": {
+          "type": "category",
+          "settings": {
+            "collection": "pendants"
+          }
         }
       },
       "block_order": [
         "category_44Tai6",
-        "category_af4pPc",
         "category_F7FYQe",
-        "category_BQiDFp"
+        "category_BQiDFp",
+        "category_k4kVmi"
       ],
       "name": "Shop by Category",
       "settings": {
