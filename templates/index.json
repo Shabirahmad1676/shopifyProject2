@@ -77,56 +77,6 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_r3niTA": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_FGrpLx": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "featured-collections"
-          }
-        },
-        "featured_collection_wKYzVx": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bracelets"
-          }
-        },
-        "featured_collection_XLT3x3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "pendants"
-          }
-        },
-        "featured_collection_Y9x9Dt": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "earrings"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_FGrpLx",
-        "featured_collection_wKYzVx",
-        "featured_collection_XLT3x3",
-        "featured_collection_Y9x9Dt"
-      ],
-      "custom_css": [],
-      "name": "Shop By category",
-      "settings": {
-        "title": "Shop By Category",
-        "heading_size": "hxl",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "jewelry_collections_alternating": {
       "type": "jewelry-collections-alternating",
       "blocks": {
@@ -274,12 +224,62 @@
         "mobile_content_alignment": "center",
         "show_text_below": true
       }
+    },
+    "shop_by_category_36qDkQ": {
+      "type": "shop-by-category",
+      "blocks": {
+        "category_e7UMeQ": {
+          "type": "category",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "category_9CniDK": {
+          "type": "category",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "category_UefkYQ": {
+          "type": "category",
+          "settings": {
+            "collection": "pendants"
+          }
+        },
+        "category_rYeCEi": {
+          "type": "category",
+          "settings": {
+            "collection": "featured-collections"
+          }
+        },
+        "category_KcDpVq": {
+          "type": "category",
+          "settings": {
+            "collection": "featured-collections"
+          }
+        }
+      },
+      "block_order": [
+        "category_e7UMeQ",
+        "category_9CniDK",
+        "category_UefkYQ",
+        "category_rYeCEi",
+        "category_KcDpVq"
+      ],
+      "name": "Shop by Category",
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "collection_list_r3niTA",
+    "shop_by_category_36qDkQ",
     "jewelry_collections_alternating",
     "multicolumn_AwiDKk",
     "image_banner_7WeAxj"

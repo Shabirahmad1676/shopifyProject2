@@ -1,0 +1,256 @@
+{{ 'section-shop-by-category.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="shop-by-category-wrapper page-width isolate section-{{ section.id }}-padding">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="shop-by-category-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        >
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
+
+    <div class="shop-by-category-container">
+      <div class="shop-by-category-slider" id="ShopByCategorySlider-{{ section.id }}">
+        <div class="shop-by-category-track">
+          {%- for block in section.blocks -%}
+            <div
+              class="shop-by-category-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {%- if block.settings.collection != blank -%}
+                <a href="{{ block.settings.collection.url }}" class="shop-by-category-link">
+                  <div class="shop-by-category-image-wrapper">
+                    {%- if block.settings.collection.featured_image != blank -%}
+                      <img
+                        src="{{ block.settings.collection.featured_image | image_url: width: 400 }}"
+                        alt="{{ block.settings.collection.featured_image.alt | escape }}"
+                        class="shop-by-category-image"
+                        loading="lazy"
+                        width="400"
+                        height="400"
+                      >
+                    {%- else -%}
+                      <div class="shop-by-category-placeholder">
+                        <svg class="icon icon-collection" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                          <path d="M9 9h6v6H9z"/>
+                        </svg>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <h3 class="shop-by-category-label">{{ block.settings.collection.title }}</h3>
+                </a>
+              {%- else -%}
+                <div class="shop-by-category-item-placeholder">
+                  <div class="shop-by-category-image-wrapper">
+                    <div class="shop-by-category-placeholder">
+                      <svg class="icon icon-collection" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 class="shop-by-category-label">Collection {{ forloop.index }}</h3>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.blocks.size > 4 -%}
+        <div class="shop-by-category-navigation">
+          <button
+            type="button"
+            class="shop-by-category-nav shop-by-category-nav--prev"
+            aria-label="Previous categories"
+            data-direction="prev"
+          >
+            <svg class="icon icon-arrow" viewBox="0 0 14 10" fill="none">
+              <path fill="currentColor" fill-rule="evenodd" d="M5.463 9.192a.5.5 0 0 1-.817.162l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.207 4.5H13a.5.5 0 0 1 0 1H2.207l3.147 3.146a.5.5 0 0 1 .109.546" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="shop-by-category-nav shop-by-category-nav--next"
+            aria-label="Next categories"
+            data-direction="next"
+          >
+            <svg class="icon icon-arrow" viewBox="0 0 14 10" fill="none">
+              <path fill="currentColor" fill-rule="evenodd" d="M8.537.808a.5.5 0 0 1 .817-.162l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L11.793 5.5H1a.5.5 0 0 1 0-1h10.793L8.646 1.354a.5.5 0 0 1-.109-.546" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('ShopByCategorySlider-{{ section.id }}');
+    const track = slider.querySelector('.shop-by-category-track');
+    const items = track.querySelectorAll('.shop-by-category-item');
+    const prevBtn = slider.parentElement.querySelector('.shop-by-category-nav--prev');
+    const nextBtn = slider.parentElement.querySelector('.shop-by-category-nav--next');
+    
+    if (!slider || items.length <= 4) return;
+    
+    let currentIndex = 0;
+    const itemsPerView = 4;
+    const totalItems = items.length;
+    const maxIndex = Math.max(0, totalItems - itemsPerView);
+    
+    function updateSlider() {
+      const translateX = -currentIndex * (100 / itemsPerView);
+      track.style.transform = `translateX(${translateX}%)`;
+      
+      if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      if (nextBtn) nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+    }
+    
+    // Initialize
+    updateSlider();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shop by Category",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Shop by Category",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by Category",
+      "blocks": [
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
