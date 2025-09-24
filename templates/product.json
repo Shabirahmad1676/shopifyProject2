@@ -23,36 +23,6 @@
           "type": "title",
           "settings": {}
         },
-        "custom_liquid_wdW3Bq": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"product-form__input product-form__input--dropdown\">\n<label class=\"form__label\">Custom Jewelery Type</label>\n<div class=\"select\">\n<select class=\"select__select\" id=\"custom-jewelery-type\" name=\"properties[Custom Jewelery Type]\" form=\"{{ 'product-form-' | append: section.id }}\">\n    <option value=\"\" hidden selected>Please select</option>\n        <option value=\"Neckless\">Neckless</option>\n        <option value=\"Ring\">Ring</option>\n        <option value=\"Pandet\">Pandet</option>\n</select>\n<span class=\"svg-wrapper\"><svg class=\"icon icon-caret\" viewBox=\"0 0 10 6\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708\" clip-rule=\"evenodd\"></path></svg>\n</span>\n</div></div>"
-          }
-        },
-        "custom_liquid_FxrR6J": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"product-form__input product-form__input--dropdown\">\n<label class=\"form__label\">Budget</label>\n<div class=\"select\">\n<select class=\"select__select\" id=\"budget\" name=\"properties[Budget]\" form=\"{{ 'product-form-' | append: section.id }}\">\n    <option value=\"\" hidden selected>Please select</option>\n        <option value=\"$1000\">$1000</option>\n        <option value=\"2000$\">2000$</option>\n        <option value=\"3000$\">3000$</option>\n        <option value=\"4000$\">4000$</option>\n</select>\n<span class=\"svg-wrapper\"><svg class=\"icon icon-caret\" viewBox=\"0 0 10 6\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708\" clip-rule=\"evenodd\"></path></svg>\n</span>\n</div></div>"
-          }
-        },
-        "custom_liquid_fKnMFL": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>.custom.form__label{margin-bottom: 0.6rem}.field.custom{margin-top:0}.custom .field__input{padding-top:0.8rem}</style>  \n<label class=\"form__label custom\" for=\"please-provide-a-detailed-description-of-what-you'd-like\">Please provide a detailed description of what you'd like</label>\n<div class=\"field custom\">\n    <input class=\"field__input\" form=\"{{ 'product-form-' | append: section.id }}\" type=\"text\" id=\"please-provide-a-detailed-description-of-what-you'd-like\" name=\"properties[Please provide a detailed description of what you'd like]\">\n</div>"
-          }
-        },
-        "custom_liquid_NA9mxb": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>.custom.form__label{margin-bottom: 0.6rem}.field.custom{margin-top:0}.custom .field__input{padding-top:0.8rem}</style>  \n<label class=\"form__label custom\" for=\"phone-number,-best-date-&-time-to-call/text\">Phone Number, Best Date & Time to Call/Text</label>\n<div class=\"field custom\">\n    <input class=\"field__input\" form=\"{{ 'product-form-' | append: section.id }}\" type=\"text\" id=\"phone-number,-best-date-&-time-to-call/text\" name=\"properties[Phone Number, Best Date & Time to Call/Text]\">\n</div>"
-          }
-        },
-        "custom_liquid_dbzcnM": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>.file-upload-container {display: flex;align-items: center;}.file-name {margin-left: 10px;font-style: italic;}</style>\n<div class=\"product-form__input\">\n  <label class=\"form__label\">Upload an image of what you're looking for</label>\n  <div class=\"file-upload-container\">\n    <input id=\"file-upload-an-image-of-what-you're-looking-for\" form=\"{{ 'product-form-' | append: section.id }}\" \n    name=\"properties[Upload an image of what you're looking for]\"  style=\"display: none;\" type=\"file\"  />\n    <button id=\"button-upload-an-image-of-what-you're-looking-for\" class=\"button\">Upload File</button>\n    <p id=\"fileName-upload-an-image-of-what-you're-looking-for\" class=\"file-name\">No file chosen</p>\n    </div>\n    <p id=\"errorMessage\" class=\"error-message\" style=\"display: none;margin-top:0;color:red\">Please upload your file(s).</p>\n</div>\n<script>\ndocument.getElementById('file-upload-an-image-of-what-you're-looking-for').addEventListener('change', function(event) {\n      const files = event.target.files;\n      let fileName;\n      if (files.length === 0) {fileName = 'No file chosen';} \n      else if (files.length === 1) {fileName = files[0].name;document.getElementById('errorMessage').style.display = 'none'; } \n      else {fileName = files.length + ' files';document.getElementById('errorMessage').style.display = 'none';}\n      document.getElementById('fileName-upload-an-image-of-what-you're-looking-for').textContent = fileName;\n  });\n  document.getElementById('button-upload-an-image-of-what-you're-looking-for').addEventListener('click', function() {\n    document.getElementById('file-upload-an-image-of-what-you're-looking-for').click();\n  });\n</script>"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -112,11 +82,6 @@
       "block_order": [
         "vendor",
         "title",
-        "custom_liquid_wdW3Bq",
-        "custom_liquid_FxrR6J",
-        "custom_liquid_fKnMFL",
-        "custom_liquid_NA9mxb",
-        "custom_liquid_dbzcnM",
         "price",
         "variant_picker",
         "quantity_selector",
