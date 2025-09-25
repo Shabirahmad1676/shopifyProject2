@@ -142,7 +142,10 @@
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}{% if block.settings.button_custom_style_1 %} button--custom{% endif %}"
+                  {% if block.settings.button_custom_style_1 %}
+                    style="background-color: {{ block.settings.button_bg_color_1 }} !important; color: {{ block.settings.button_text_color_1 }} !important; border-radius: {{ block.settings.button_border_radius_1 }}px !important; opacity: 1 !important;"
+                  {% endif %}
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>
@@ -154,7 +157,10 @@
                   {% else %}
                     href="{{ block.settings.button_link_2 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}{% if block.settings.button_custom_style_2 %} button--custom{% endif %}"
+                  {% if block.settings.button_custom_style_2 %}
+                    style="background-color: {{ block.settings.button_bg_color_2 }} !important; color: {{ block.settings.button_text_color_2 }} !important; border-radius: {{ block.settings.button_border_radius_2 }}px !important; opacity: 1 !important;"
+                  {% endif %}
                 >
                   {{- block.settings.button_label_2 | escape -}}
                 </a>
@@ -463,6 +469,35 @@
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
         },
         {
+          "type": "checkbox",
+          "id": "button_custom_style_1",
+          "default": false,
+          "label": "Enable Custom Styling",
+          "info": "Override default button styling with custom colors and border radius"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color_1",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color_1",
+          "label": "Text Color",
+          "default": "#1e3a8a"
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius_1",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Border Radius",
+          "default": 8
+        },
+        {
         "type": "header",
         "content": "t:sections.image-banner.blocks.buttons.settings.header_2.content"
         },
@@ -483,6 +518,35 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_custom_style_2",
+          "default": false,
+          "label": "Enable Custom Styling",
+          "info": "Override default button styling with custom colors and border radius"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color_2",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color_2",
+          "label": "Text Color",
+          "default": "#1e3a8a"
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius_2",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Border Radius",
+          "default": 8
         }
       ]
     }

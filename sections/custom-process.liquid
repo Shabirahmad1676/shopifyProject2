@@ -1,0 +1,185 @@
+{%- liquid
+  assign section_id = section.id
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign cta_text = section.settings.cta_text
+  assign cta_url = section.settings.cta_url
+-%}
+
+{{ 'section-custom-process.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section_id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section_id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="custom-process section-{{ section_id }}-padding">
+  <div class="page-width">
+    <div class="custom-process__container">
+      {%- if title != blank -%}
+        <h2 class="custom-process__title">{{ title }}</h2>
+      {%- endif -%}
+      
+      {%- if subtitle != blank -%}
+        <p class="custom-process__subtitle">{{ subtitle }}</p>
+      {%- endif -%}
+      
+      <div class="custom-process__steps">
+        {%- for block in section.blocks -%}
+          <div class="custom-process__step" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="custom-process__step-icon">
+                <img src="{{ block.settings.icon | image_url: width: 60 }}" 
+                     alt="{{ block.settings.title | escape }}" 
+                     width="60" 
+                     height="60"
+                     loading="lazy">
+              </div>
+            {%- endif -%}
+            
+            {%- if block.settings.title != blank -%}
+              <h3 class="custom-process__step-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.description != blank -%}
+              <p class="custom-process__step-description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      
+      {%- if cta_text != blank and cta_url != blank -%}
+        <div class="custom-process__cta">
+          <a href="{{ cta_url }}" class="custom-process__cta-link">
+            {{ cta_text }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Process",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Custom Process"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "create one-of-a-kind piece that reflects your style"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call to Action Text",
+      "default": "VIEW CUSTOM JEWELRY"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call to Action URL"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process_step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (SVG Upload)",
+          "info": "Upload an SVG icon for this step"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Process",
+      "blocks": [
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Consultation",
+            "description": "You bring the vision, we bring the expertise"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Design Approval",
+            "description": "Our designers create a 3D rendering or hand sketch for your review"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Material Selection",
+            "description": "Choose from gold, platinum, diamonds, gemstones"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Final Reveal",
+            "description": "We present your finished piece, polished, packaged, and ready for lifetime wear"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

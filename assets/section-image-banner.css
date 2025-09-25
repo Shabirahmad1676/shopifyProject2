@@ -13,6 +13,34 @@
   background-color: transparent;
 }
 
+/* Custom Button Styling */
+.button--custom {
+  border: none !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.button--custom:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button--custom:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 2px;
+}
+
+.button--custom:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 
 
@@ -538,6 +566,14 @@
 }
 
 @media screen and (max-width: 749px) {
+  .banner__heading {
+    font-size: 28px !important;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
   .banner__buttons .button {
     padding: 10px 20px;
     font-size: 12px;
@@ -551,6 +587,13 @@
   .banner--content-align-mobile-center .banner__buttons--multiple > * {
     flex-grow: 1;
     min-width: 22rem;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .banner__heading {
+    font-size: 40px !important;
+    line-height: 1.3;
   }
 }
 

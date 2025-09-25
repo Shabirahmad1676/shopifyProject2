@@ -1,0 +1,76 @@
+.custom-button {
+  width: 100%;
+}
+
+.custom-button__link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.custom-button__link:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.custom-button__link:focus {
+  outline: 2px solid rgba(var(--color-foreground), 0.5);
+  outline-offset: 2px;
+}
+
+.custom-button__link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Outline style variant */
+.custom-button__link--outline {
+  background-color: transparent !important;
+  border: 2px solid currentColor;
+}
+
+.custom-button__link--outline:hover {
+  background-color: currentColor;
+  color: var(--color-background, #ffffff);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .custom-button__link {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .custom-button[style*="text-align: left"] .custom-button__link,
+  .custom-button[style*="text-align: right"] .custom-button__link {
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .custom-button__link {
+    transition: none;
+  }
+  
+  .custom-button__link:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .custom-button__link {
+    border: 2px solid currentColor;
+  }
+}

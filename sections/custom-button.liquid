@@ -1,0 +1,200 @@
+{%- liquid
+  assign section_id = section.id
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+  assign button_style = section.settings.button_style
+  assign text_color = section.settings.text_color
+  assign background_color = section.settings.background_color
+  assign border_radius = section.settings.border_radius
+  assign button_size = section.settings.button_size
+  assign alignment = section.settings.alignment
+-%}
+
+{{ 'section-custom-button.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section_id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section_id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .custom-button-{{ section_id }} {
+    text-align: {{ alignment }};
+  }
+
+  .custom-button-{{ section_id }} .custom-button__link {
+    background-color: {{ background_color }};
+    color: {{ text_color }};
+    border-radius: {{ border_radius }}px;
+    {% if button_size == 'small' %}
+      padding: 12px 24px;
+      font-size: 14px;
+    {% elsif button_size == 'large' %}
+      padding: 18px 36px;
+      font-size: 18px;
+    {% else %}
+      padding: 15px 30px;
+      font-size: 16px;
+    {% endif %}
+  }
+
+  .custom-button-{{ section_id }} .custom-button__link:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+{%- endstyle -%}
+
+<div class="custom-button section-{{ section_id }}-padding">
+  <div class="page-width">
+    <div class="custom-button-{{ section_id }}">
+      {%- if button_text != blank and button_url != blank -%}
+        <a href="{{ button_url }}" class="custom-button__link">
+          {{ button_text }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Button",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "LOCATE US"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "outline",
+          "label": "Outline"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1e3a8a"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Button Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Button",
+      "settings": {
+        "button_text": "LOCATE US",
+        "text_color": "#1e3a8a",
+        "background_color": "#ffffff",
+        "border_radius": 8,
+        "button_size": "medium",
+        "alignment": "center"
+      }
+    }
+  ]
+}
+{% endschema %}
