@@ -48,8 +48,8 @@
         "content_alignment": "center",
         "color_scheme": "scheme-5",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 92,
+        "padding_bottom": 68
       }
     },
     "main": {
@@ -68,7 +68,7 @@
         "column_6FNUKK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-consultation-7796326_1.png",
+            "image": "shopify://shop_images/noun-consultation-7796326_1.svg",
             "title": "Consulatation",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
@@ -78,7 +78,7 @@
         "column_iBW6Tr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-gemstone-7096952_1.png",
+            "image": "shopify://shop_images/Frame_1707479327.svg",
             "title": "Design Approval",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
@@ -88,7 +88,7 @@
         "column_VJKrbb": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/noun-shop-7307817_1.png",
+            "image": "shopify://shop_images/noun-gemstone-7096952_1.svg",
             "title": "Material Selection",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
@@ -98,7 +98,7 @@
         "column_QYqxhF": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707479327.png",
+            "image": "shopify://shop_images/noun-shop-7307817_1.svg",
             "title": "Final Review",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
@@ -115,6 +115,7 @@
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -158,7 +159,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Picture_Blue_Nile_Store.png",
+        "image": "shopify://shop_images/61ef935db0435462387b00ce84ba14643c2bd536.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",

@@ -51,13 +51,13 @@
         "menu_quick": "main-menu",
         "menu_care": "footer",
         "hours": "Monday to Saturday: 10:00AM - 7:00PM",
-        "phone": "(646) 720-1067",
+        "phone": "",
         "address": "15 W 47th St, New York, NY 10036",
         "social_facebook": "https://www.facebok.com",
         "social_instagram": "https://www.facebok.com",
         "social_youtube": "https://www.facebok.com",
         "social_tiktok": "https://www.facebok.com",
-        "newsletter_placeholder": "Enter Your Email",
+        "newsletter_placeholder": "",
         "newsletter_button": "→",
         "copyright_text": "Copyright © 2025 All rights reserved."
       }
