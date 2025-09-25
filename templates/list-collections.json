@@ -9,6 +9,30 @@
  */
 {
   "sections": {
+    "rich_text_Aa3mdE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CecTha": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CecTha"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 52
+      }
+    },
     "rich_text_6hrxVC": {
       "type": "rich-text",
       "blocks": {
@@ -174,6 +198,7 @@
     }
   },
   "order": [
+    "rich_text_Aa3mdE",
     "rich_text_6hrxVC",
     "main",
     "multicolumn_7nzLkY",

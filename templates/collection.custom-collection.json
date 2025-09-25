@@ -9,6 +9,30 @@
  */
 {
   "sections": {
+    "rich_text_zTGCMh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hg3Qwh": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hg3Qwh"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 52
+      }
+    },
     "rich_text_nFgrdX": {
       "type": "rich-text",
       "blocks": {
@@ -71,6 +95,7 @@
     }
   },
   "order": [
+    "rich_text_zTGCMh",
     "rich_text_nFgrdX",
     "banner",
     "product-grid"
