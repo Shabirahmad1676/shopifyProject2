@@ -86,6 +86,58 @@
         "columns_mobile": "2"
       }
     },
+    "custom_process_iHRRqM": {
+      "type": "custom-process",
+      "blocks": {
+        "process_step_jwdfVV": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-consultation-7796326_1.svg",
+            "title": "Consultation",
+            "description": "You bring the vision, we bring the expertise"
+          }
+        },
+        "process_step_fei8e6": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1707479327.svg",
+            "title": "Design Approval",
+            "description": "Our designers create a 3D rendering or hand sketch for your review"
+          }
+        },
+        "process_step_BLg7TR": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-gemstone-7096952_1.svg",
+            "title": "Material Selection",
+            "description": "Choose from gold, platinum, diamonds, gemstones"
+          }
+        },
+        "process_step_rWwWHw": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-shop-7307817_1.svg",
+            "title": "Final Reveal",
+            "description": "We present your finished piece, polished, packaged, and ready for lifetime wear"
+          }
+        }
+      },
+      "block_order": [
+        "process_step_jwdfVV",
+        "process_step_fei8e6",
+        "process_step_BLg7TR",
+        "process_step_rWwWHw"
+      ],
+      "name": "Custom Process",
+      "settings": {
+        "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
+        "cta_text": "VIEW CUSTOM JEWELRY",
+        "cta_url": "",
+        "padding_top": 80,
+        "padding_bottom": 84
+      }
+    },
     "multicolumn_7nzLkY": {
       "type": "multicolumn",
       "blocks": {
@@ -136,6 +188,7 @@
         "column_VJKrbb",
         "column_QYqxhF"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
@@ -171,9 +224,17 @@
             "button_label_1": "LOCATE US",
             "button_link_1": "",
             "button_style_secondary_1": false,
+            "button_custom_style_1": true,
+            "button_bg_color_1": "#ffffff",
+            "button_text_color_1": "#121212",
+            "button_border_radius_1": 8,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "button_custom_style_2": false,
+            "button_bg_color_2": "#ffffff",
+            "button_text_color_2": "#1e3a8a",
+            "button_border_radius_2": 8
           }
         }
       },
@@ -201,6 +262,7 @@
     "rich_text_Aa3mdE",
     "rich_text_6hrxVC",
     "main",
+    "custom_process_iHRRqM",
     "multicolumn_7nzLkY",
     "image_banner_3ap8XV"
   ]

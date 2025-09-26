@@ -88,10 +88,10 @@
     "shop_by_category_36qDkQ": {
       "type": "shop-by-category",
       "blocks": {
-        "category_e7UMeQ": {
+        "category_rYeCEi": {
           "type": "category",
           "settings": {
-            "collection": "bracelets"
+            "collection": "featured-collections"
           }
         },
         "category_9CniDK": {
@@ -106,10 +106,10 @@
             "collection": "pendants"
           }
         },
-        "category_rYeCEi": {
+        "category_e7UMeQ": {
           "type": "category",
           "settings": {
-            "collection": "featured-collections"
+            "collection": "bracelets"
           }
         },
         "category_KcDpVq": {
@@ -120,10 +120,10 @@
         }
       },
       "block_order": [
-        "category_e7UMeQ",
+        "category_rYeCEi",
         "category_9CniDK",
         "category_UefkYQ",
-        "category_rYeCEi",
+        "category_e7UMeQ",
         "category_KcDpVq"
       ],
       "name": "Shop by Category",
@@ -171,6 +171,58 @@
         "heading": "Our Collections",
         "subheading": "Discover our curated selection of exquisite jewelry",
         "color_scheme": "scheme-1"
+      }
+    },
+    "custom_process_Vk9Nrw": {
+      "type": "custom-process",
+      "blocks": {
+        "process_step_LkJz7z": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-consultation-7796326_1.svg",
+            "title": "Consultation",
+            "description": "You bring the vision, we bring the expertise"
+          }
+        },
+        "process_step_UY8rew": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1707479327.svg",
+            "title": "Design Approval",
+            "description": "Our designers create a 3D rendering or hand sketch for your review"
+          }
+        },
+        "process_step_LpJtLe": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-gemstone-7096952_1.svg",
+            "title": "Material Selection",
+            "description": "Choose from gold, platinum, diamonds, gemstones"
+          }
+        },
+        "process_step_eb4fBH": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-shop-7307817_1.svg",
+            "title": "Final Reveal",
+            "description": "We present your finished piece, polished, packaged, and ready for lifetime wear"
+          }
+        }
+      },
+      "block_order": [
+        "process_step_LkJz7z",
+        "process_step_UY8rew",
+        "process_step_LpJtLe",
+        "process_step_eb4fBH"
+      ],
+      "name": "Custom Process",
+      "settings": {
+        "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
+        "cta_text": "VIEW CUSTOM JEWELRY",
+        "cta_url": "",
+        "padding_top": 80,
+        "padding_bottom": 84
       }
     },
     "multicolumn_AwiDKk": {
@@ -223,6 +275,7 @@
         "column_h9haUN",
         "column_C3yfRk"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
@@ -297,6 +350,7 @@
     "featured_collection",
     "shop_by_category_36qDkQ",
     "jewelry_collections_alternating",
+    "custom_process_Vk9Nrw",
     "multicolumn_AwiDKk",
     "image_banner_7WeAxj"
   ]

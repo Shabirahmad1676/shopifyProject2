@@ -190,12 +190,12 @@
       "scheme-5": {
         "settings": {
           "background": "#2d2046",
-          "background_gradient": "linear-gradient(135deg, rgba(45, 32, 70, 1) 15%, rgba(111, 79, 172, 1) 90%)",
+          "background_gradient": "linear-gradient(85deg, rgba(45, 32, 70, 1) 6%, rgba(111, 79, 172, 1) 92%)",
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "shadow": "#fffbfb"
         }
       }
     }

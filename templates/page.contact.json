@@ -129,9 +129,17 @@
             "button_label_1": "LOCATE US",
             "button_link_1": "",
             "button_style_secondary_1": false,
+            "button_custom_style_1": true,
+            "button_bg_color_1": "#ffffff",
+            "button_text_color_1": "#121212",
+            "button_border_radius_1": 8,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "button_custom_style_2": false,
+            "button_bg_color_2": "#ffffff",
+            "button_text_color_2": "#1e3a8a",
+            "button_border_radius_2": 8
           }
         }
       },

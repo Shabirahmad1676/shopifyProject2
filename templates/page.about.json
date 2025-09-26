@@ -41,7 +41,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/db72db6886ae8123f005db1efa15663c22f87772.png",
+        "image": "shopify://shop_images/lark_and_berry_collectionengagement_1_0c453c34-faea-46b1-89e6-df4feb0c1967_png.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -62,7 +62,7 @@
         "column_Gx3RAj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ca806ff797d49a34d5ce045f3a4b5ec34db3e826.png",
+            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png",
             "title": "THE WAY FORWARD",
             "text": "<p>At Tamura Jewelry, we merge luxury with sustainability. Our commitment to ethically sourced, exquisite craftsmanship ensures every piece is a timeless investment in both beauty and the planet’s future. Each design reflects our dedication to creating jewelry that lasts a lifetime, with a positive impact.</p>",
             "link_label": "",
@@ -72,7 +72,7 @@
         "column_yJntWc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/db72db6886ae8123f005db1efa15663c22f87772.png",
+            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png",
             "title": "WE LOVE DIAMONDS",
             "text": "<p>Our diamonds are carefully selected, offering unmatched brilliance and clarity. Whether lab-grown or natural, each stone is chosen for its exceptional quality and ethical sourcing. We pride ourselves on offering diamonds that sparkle with integrity, creating pieces that last a lifetime while staying true to our sustainable values.</p>",
             "link_label": "",
@@ -82,7 +82,7 @@
         "column_xr4dWH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/db72db6886ae8123f005db1efa15663c22f87772.png",
+            "image": "shopify://shop_images/Figure_stackables_veto_square-small_png.png",
             "title": "SHAPING THE FUTURE OF JEWELERY",
             "text": "<p>Innovation and sustainability drive Tamura Jewelry forward. As a brand, we are proud to lead the industry in crafting luxury jewelry that honors both timeless design and environmental responsibility. Together, we are shaping a brighter future for fine jewelry—one that respects both the wearer and the world.</p>",
             "link_label": "",
@@ -117,10 +117,10 @@
     "shop_by_category_jf4X6t": {
       "type": "shop-by-category",
       "blocks": {
-        "category_44Tai6": {
+        "category_BQiDFp": {
           "type": "category",
           "settings": {
-            "collection": "bracelets"
+            "collection": "featured-collections"
           }
         },
         "category_F7FYQe": {
@@ -129,24 +129,24 @@
             "collection": "earrings"
           }
         },
-        "category_BQiDFp": {
-          "type": "category",
-          "settings": {
-            "collection": "featured-collections"
-          }
-        },
         "category_k4kVmi": {
           "type": "category",
           "settings": {
             "collection": "pendants"
           }
+        },
+        "category_44Tai6": {
+          "type": "category",
+          "settings": {
+            "collection": "bracelets"
+          }
         }
       },
       "block_order": [
-        "category_44Tai6",
-        "category_F7FYQe",
         "category_BQiDFp",
-        "category_k4kVmi"
+        "category_F7FYQe",
+        "category_k4kVmi",
+        "category_44Tai6"
       ],
       "name": "Shop by Category",
       "settings": {
@@ -155,6 +155,58 @@
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 100
+      }
+    },
+    "custom_process_r7jprV": {
+      "type": "custom-process",
+      "blocks": {
+        "process_step_ce8CAL": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-consultation-7796326_1.svg",
+            "title": "Consultation",
+            "description": "You bring the vision, we bring the expertise"
+          }
+        },
+        "process_step_YNFbCR": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1707479327.svg",
+            "title": "Design Approval",
+            "description": "Our designers create a 3D rendering or hand sketch for your review"
+          }
+        },
+        "process_step_xAFLyx": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-gemstone-7096952_1.svg",
+            "title": "Material Selection",
+            "description": "Choose from gold, platinum, diamonds, gemstones"
+          }
+        },
+        "process_step_PFyjXi": {
+          "type": "process_step",
+          "settings": {
+            "icon": "shopify://shop_images/noun-shop-7307817_1.svg",
+            "title": "Final Reveal",
+            "description": "We present your finished piece, polished, packaged, and ready for lifetime wear"
+          }
+        }
+      },
+      "block_order": [
+        "process_step_ce8CAL",
+        "process_step_YNFbCR",
+        "process_step_xAFLyx",
+        "process_step_PFyjXi"
+      ],
+      "name": "Custom Process",
+      "settings": {
+        "title": "Custom Process",
+        "subtitle": "create one-of-a-kind piece that reflects your style",
+        "cta_text": "VIEW CUSTOM JEWELRY",
+        "cta_url": "",
+        "padding_top": 80,
+        "padding_bottom": 84
       }
     },
     "multicolumn_7w7CxP": {
@@ -207,6 +259,7 @@
         "column_r3Aaqt",
         "column_hdtckG"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Custom Process",
@@ -242,9 +295,17 @@
             "button_label_1": "LOCATE US",
             "button_link_1": "",
             "button_style_secondary_1": false,
+            "button_custom_style_1": true,
+            "button_bg_color_1": "#ffffff",
+            "button_text_color_1": "#121212",
+            "button_border_radius_1": 8,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "button_custom_style_2": false,
+            "button_bg_color_2": "#ffffff",
+            "button_text_color_2": "#121212",
+            "button_border_radius_2": 8
           }
         }
       },
@@ -273,6 +334,7 @@
     "image_with_text_qPWqaA",
     "multicolumn_nE7efH",
     "shop_by_category_jf4X6t",
+    "custom_process_r7jprV",
     "multicolumn_7w7CxP",
     "image_banner_mtFzwG"
   ]
