@@ -35,6 +35,13 @@
             "custom_liquid": "<div class=\"product-form__input product-form__input--dropdown\">\n<label class=\"form__label\">Budget</label>\n<div class=\"select\">\n<select class=\"select__select\" id=\"budget\" name=\"properties[Budget]\" form=\"{{ 'product-form-' | append: section.id }}\">\n    <option value=\"\" hidden selected>Please select</option>\n        <option value=\"$1000\">$1000</option>\n        <option value=\"2000$\">2000$</option>\n        <option value=\"3000$\">3000$</option>\n        <option value=\"4000$\">4000$</option>\n</select>\n<span class=\"svg-wrapper\"><svg class=\"icon icon-caret\" viewBox=\"0 0 10 6\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708\" clip-rule=\"evenodd\"></path></svg>\n</span>\n</div></div>"
           }
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
         "custom_liquid_fKnMFL": {
           "type": "custom_liquid",
           "settings": {
@@ -56,13 +63,6 @@
         "price": {
           "type": "price",
           "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -114,11 +114,11 @@
         "title",
         "custom_liquid_wdW3Bq",
         "custom_liquid_FxrR6J",
+        "variant_picker",
         "custom_liquid_fKnMFL",
         "custom_liquid_NA9mxb",
         "custom_liquid_dbzcnM",
         "price",
-        "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "collapsible_tab_TYgDHj",
@@ -132,7 +132,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "lightbox",
