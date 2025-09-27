@@ -1053,10 +1053,10 @@ summary::-webkit-details-marker {
     width: 100%;
   }
 
-  .grid--peek.slider--mobile .grid__item {
+  /* .grid--peek.slider--mobile .grid__item {
     box-sizing: content-box;
     margin: 0;
-  }
+  } */
 
   .grid--peek .grid__item {
     min-width: 35%;

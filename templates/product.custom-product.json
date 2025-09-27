@@ -77,6 +77,7 @@
         },
         "collapsible_tab_TYgDHj": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Description",
             "icon": "none",
@@ -86,6 +87,7 @@
         },
         "collapsible_tab_fWwc6x": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "DETAILS",
             "icon": "none",
@@ -95,6 +97,7 @@
         },
         "collapsible_tab_gH3bqt": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "MATERIALS",
             "icon": "none",
@@ -106,6 +109,34 @@
           "type": "share",
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "process_step_MtN4ii": {
+          "type": "process_step",
+          "settings": {
+            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png"
+          }
+        },
+        "process_step_Ey4UhF": {
+          "type": "process_step",
+          "settings": {
+            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png"
+          }
+        },
+        "process_step_mPeap4": {
+          "type": "process_step",
+          "settings": {
+            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png"
+          }
+        },
+        "text_CdNMKE": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
           }
         }
       },
@@ -124,7 +155,11 @@
         "collapsible_tab_TYgDHj",
         "collapsible_tab_fWwc6x",
         "collapsible_tab_gH3bqt",
-        "share"
+        "share",
+        "process_step_MtN4ii",
+        "process_step_Ey4UhF",
+        "process_step_mPeap4",
+        "text_CdNMKE"
       ],
       "settings": {
         "enable_sticky_info": true,
