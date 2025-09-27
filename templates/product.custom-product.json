@@ -114,21 +114,21 @@
         "process_step_MtN4ii": {
           "type": "process_step",
           "settings": {
-            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "title": "How Your Custom Piece Is Made <br> Part 1: The Sketch / CAD Drawing & Mold",
             "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png"
           }
         },
         "process_step_Ey4UhF": {
           "type": "process_step",
           "settings": {
-            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "title": "Part 2: Manufacturing & Production ",
             "image": "shopify://shop_images/Figure_bespoke_LARK_AND_BERRY_lab_grown_diamonds_bespoke_oscar_m_png.png"
           }
         },
         "process_step_mPeap4": {
           "type": "process_step",
           "settings": {
-            "title": "How Your Custom Piece Is MadePart 1: The Sketch / CAD Drawing & Mold",
+            "title": "Part 2: Manufacturing & Production ",
             "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png"
           }
         },
