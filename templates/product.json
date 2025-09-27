@@ -40,9 +40,23 @@
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
+          }
+        },
+        "custom_buy_buttons_344tjJ": {
+          "type": "custom_buy_buttons",
+          "settings": {
+            "show_add_to_cart": true,
+            "add_to_cart_text": "ADD TO BAG",
+            "show_wishlist": true,
+            "wishlist_style": "icon_only",
+            "wishlist_text": "Add to Wishlist",
+            "show_similar_products": true,
+            "similar_products_text": "VIEW SIMILAR PRODUCTS",
+            "similar_products_collection": ""
           }
         },
         "similar_products_VjqLfw": {
@@ -106,6 +120,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "custom_buy_buttons_344tjJ",
         "similar_products_VjqLfw",
         "judge_me_reviews_preview_badge_ELwLre",
         "collapsible_tab_TYgDHj",
