@@ -94,7 +94,7 @@
     {% if product.variants[forloop.index0].image != blank %}
       <label for="{{ input_id }}" style="background-image: url('{{ product.variants[forloop.index0].image | image_url: width: 50 }}'); background-size: cover; background-position: center; width: 50px; height: 50px; display: inline-block; border-radius: 10%; border: 2px solid #ccc;">
         <span style="display: none;">{{ value -}}</span>
-      </label>10
+      </label>
     {% else %}
       <label for="{{ input_id }}">
         {{ value -}}
