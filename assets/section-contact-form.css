@@ -58,10 +58,12 @@
 
 /* Contact form UI enhancements */
 .contact.page-width.page-width--narrow {
-  border: 1px solid #e5e5e5;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 24px;
   background: #fff;
+  margin-top: 20rem;
+  margin-bottom: 20rem;
 }
 
 .contact .field__input,
