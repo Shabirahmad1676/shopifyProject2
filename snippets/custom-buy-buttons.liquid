@@ -1,0 +1,113 @@
+{% comment %}
+  Custom Buy Buttons Block
+  Renders customizable buy buttons including ADD TO BAG, wishlist, and similar products buttons.
+  
+  Accepts:
+  - block: {Object} block settings
+  - product: {Object} product object
+  - product_form_id: {String} product form id
+  - section_id: {String} section id
+  
+  Usage:
+  {% render 'custom-buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id %}
+{% endcomment %}
+
+<div class="custom-buy-buttons" {{ block.shopify_attributes }}>
+  {%- comment -%} Top Row - ADD TO BAG and Wishlist {%- endcomment -%}
+  <div class="product__button-row product__button-row--top">
+    {%- comment -%} ADD TO BAG Button {%- endcomment -%}
+    {%- if block.settings.show_add_to_cart -%}
+      <product-form class="product-form" data-section-id="{{ section_id }}">
+        <div class="product-form__error-message-wrapper" role="alert" hidden>
+          <span class="svg-wrapper">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+          </span>
+          <span class="product-form__error-message"></span>
+        </div>
+
+        {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            {% if product.selected_or_first_available_variant.available == false or product.selected_or_first_available_variant == null %}
+              disabled
+            {% endif %}
+            class="product-variant-id"
+          >
+          
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="button button--add-to-bag"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
+              disabled
+            {% endif %}
+          >
+            <span class="button__text">
+              {%- if product.selected_or_first_available_variant == null -%}
+                {{ 'products.product.unavailable' | t }}
+              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ block.settings.add_to_cart_text | default: 'ADD TO BAG' }}
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+        {%- endform -%}
+      </product-form>
+    {%- endif -%}
+    
+    {%- comment -%} Wishlist Button {%- endcomment -%}
+    {%- if block.settings.show_wishlist -%}
+      <button 
+        type="button" 
+        class="button button--wishlist{% if block.settings.wishlist_style == 'text_with_icon' %} button--wishlist-text{% endif %}" 
+        aria-label="Add to wishlist" 
+        data-product-id="{{ product.id }}" 
+        data-wishlist-action="toggle"
+      >
+        {%- if block.settings.wishlist_style == 'text_with_icon' -%}
+          <span class="button__text">{{ block.settings.wishlist_text | default: 'Add to Wishlist' }}</span>
+          <span class="button__icon">
+            {{- 'icon-heart.svg' | inline_asset_content -}}
+          </span>
+        {%- else -%}
+          <span class="button__icon">
+            {{- 'icon-heart.svg' | inline_asset_content -}}
+          </span>
+        {%- endif -%}
+      </button>
+    {%- endif -%}
+  </div>
+  
+  {%- comment -%} Bottom Row - Similar Products {%- endcomment -%}
+  {%- if block.settings.show_similar_products -%}
+    {%- assign similar_collection = block.settings.similar_products_collection -%}
+    {%- unless similar_collection -%}
+      {%- if product.collections.size > 0 -%}
+        {%- assign similar_collection = product.collections.first -%}
+      {%- endif -%}
+    {%- endunless -%}
+    
+    {%- if similar_collection -%}
+      <div class="product__button-row product__button-row--bottom">
+        <a href="{{ similar_collection.url }}" class="button button--similar-products">
+          <span class="button__text">{{ block.settings.similar_products_text | default: 'VIEW SIMILAR PRODUCTS' }}</span>
+        </a>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>

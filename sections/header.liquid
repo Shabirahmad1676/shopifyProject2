@@ -7,6 +7,12 @@
   media="print"
   onload="this.media='all'"
 >
+<link
+  rel="stylesheet"
+  href="{{ 'component-wishlist.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -201,6 +207,7 @@
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   for block in section.blocks
@@ -384,6 +391,12 @@
             {% render block %}
         {%- endcase -%}
       {%- endfor -%}
+
+      <a href="/pages/wishlist" class="header__icon header__icon--wishlist link focus-inset" id="wishlist-icon">
+        <span class="svg-wrapper">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+        <span class="visually-hidden">Wishlist</span>
+        <div class="wishlist-count" style="display: none;">0</div>
+      </a>
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% if cart == empty %}

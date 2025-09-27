@@ -51,6 +51,20 @@
             "content": "<h2>Fully Personalized</h2><p>Select your metal, gemstones, finish, and engraving. From diamonds to moissanite, 10K to 24K gold—we use only the finest materials to bring your vision to life.</p><h3>Premium Materials</h3><ul><li><strong>Diamonds:</strong> Natural and lab-grown options</li><li><strong>Metals:</strong> 10K, 14K, 18K, and 24K gold</li><li><strong>Gemstones:</strong> Sapphires, rubies, emeralds, and more</li></ul><h3>Customization Options</h3><ol><li>Choose your metal type and finish</li><li>Select gemstones and settings</li><li>Add personal engravings</li><li>Review and approve your design</li></ol>"
           }
         },
+        "similar_products": {
+          "type": "similar_products",
+          "settings": {
+            "heading": "You might also like",
+            "use_metafield": true,
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "columns_mobile": "2",
+            "image_ratio": "adapt",
+            "show_secondary_image": false,
+            "show_vendor": false,
+            "show_rating": false
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -66,6 +80,7 @@
         "quantity_selector",
         "buy_buttons",
         "rich_text_description",
+        "similar_products",
         "share"
       ],
       "settings": {

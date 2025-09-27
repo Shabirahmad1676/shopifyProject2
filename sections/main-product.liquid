@@ -43,6 +43,7 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'rich-text-editor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -689,6 +690,58 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'similar_products' -%}
+                <div class="product__similar-products quick-add-hidden" {{ block.shopify_attributes }}>
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="product__similar-products-heading">{{ block.settings.heading }}</h3>
+                  {%- endif -%}
+                  
+                  {%- assign similar_products = blank -%}
+                  
+                  {%- comment -%} Get similar products from metafield {%- endcomment -%}
+                  {%- if block.settings.use_metafield and product.metafields.custom.similar_products != blank -%}
+                    {%- assign similar_product_handles = product.metafields.custom.similar_products | split: ',' -%}
+                    {%- assign similar_products = collections.all.products | where: 'handle', similar_product_handles -%}
+                  {%- endif -%}
+                  
+                  {%- comment -%} Fallback to manual product selection {%- endcomment -%}
+                  {%- if similar_products == blank and block.settings.products != blank -%}
+                    {%- assign similar_products = block.settings.products -%}
+                  {%- endif -%}
+                  
+                  {%- comment -%} Fallback to collection products {%- endcomment -%}
+                  {%- if similar_products == blank and block.settings.collection != blank -%}
+                    {%- assign similar_products = block.settings.collection.products | limit: block.settings.products_to_show -%}
+                  {%- endif -%}
+                  
+                  {%- if similar_products != blank -%}
+                    <div class="similar-products-grid grid grid--{{ block.settings.columns_desktop }}-col-desktop grid--{{ block.settings.columns_mobile }}-col-tablet-down">
+                      {%- for similar_product in similar_products limit: block.settings.products_to_show -%}
+                        {%- unless similar_product.handle == product.handle -%}
+                          <div class="similar-product-item grid__item">
+                            {% render 'card-product',
+                              card_product: similar_product,
+                              media_aspect_ratio: block.settings.image_ratio,
+                              show_secondary_image: block.settings.show_secondary_image,
+                              show_vendor: block.settings.show_vendor,
+                              show_rating: block.settings.show_rating,
+                              lazy_load: true,
+                              section_id: section.id,
+                              horizontal_class: false,
+                              horizontal_quick_add: false
+                            %}
+                          </div>
+                        {%- endunless -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- else -%}
+                    {%- if request.design_mode -%}
+                      <div class="similar-products-placeholder">
+                        <p>No similar products found. Please configure products in the block settings or add metafields.</p>
+                      </div>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
               {%- when 'process_step' -%}
                 <div class="product__process-step" {{ block.shopify_attributes }}>
                   {%- if block.settings.title != blank -%}
@@ -709,12 +762,17 @@
                     </div>
                   {%- endif -%}
                 </div>
+              {%- when 'custom_buy_buttons' -%}
+                <div class="product__action-buttons" {{ block.shopify_attributes }}>
+                  {%- render 'custom-buy-buttons', 
+                    block: block, 
+                    product: product, 
+                    product_form_id: product_form_id, 
+                    section_id: section.id 
+                  -%}
+                </div>
             {%- endcase -%}
           {%- endfor -%}
-          <a href="{{ product.url }}" class="link product__view-details animate-arrow">
-            {{ 'products.product.view_full_details' | t }}
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </a>
         </section>
       </div>
     </div>
@@ -960,6 +1018,84 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "custom_buy_buttons",
+      "name": "Custom Buy Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "ADD TO CART Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_add_to_cart",
+          "label": "Show ADD TO CART Button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "add_to_cart_text",
+          "label": "ADD TO CART Button Text",
+          "default": "ADD TO BAG"
+        },
+        {
+          "type": "header",
+          "content": "Wishlist Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_wishlist",
+          "label": "Show Wishlist Button",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "wishlist_style",
+          "label": "Wishlist Button Style",
+          "options": [
+            {
+              "value": "icon_only",
+              "label": "Heart Icon Only"
+            },
+            {
+              "value": "text_with_icon",
+              "label": "Text with Heart Icon"
+            }
+          ],
+          "default": "icon_only"
+        },
+        {
+          "type": "text",
+          "id": "wishlist_text",
+          "label": "Wishlist Button Text",
+          "default": "Add to Wishlist",
+          "info": "Only used when 'Text with Heart Icon' style is selected"
+        },
+        {
+          "type": "header",
+          "content": "Similar Products Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_similar_products",
+          "label": "Show Similar Products Button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "similar_products_text",
+          "label": "Similar Products Button Text",
+          "default": "VIEW SIMILAR PRODUCTS"
+        },
+        {
+          "type": "collection",
+          "id": "similar_products_collection",
+          "label": "Similar Products Collection",
+          "info": "Select a specific collection for similar products. If not selected, will use the product's first collection."
         }
       ]
     },
@@ -1527,6 +1663,118 @@
           "id": "image",
           "label": "Step Image",
           "info": "Upload an image for this process step"
+        }
+      ]
+    },
+    {
+      "type": "similar_products",
+      "name": "Similar Products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "You might also like"
+        },
+        {
+          "type": "header",
+          "content": "Product Source"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_metafield",
+          "label": "Use metafield for similar products",
+          "info": "Enable this to use product metafields.custom.similar_products (comma-separated product handles)",
+          "default": false
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Manually select products",
+          "info": "Select products to show as similar products (ignored if metafield is enabled)"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Select a collection to show products from (used as fallback if metafield and manual selection are empty)"
+        },
+        {
+          "type": "header",
+          "content": "Display Settings"
+        },
+        {
+          "type": "range",
+          "id": "products_to_show",
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "default": 4,
+          "label": "Number of products to show"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 4,
+          "label": "Number of columns on desktop"
+        },
+        {
+          "type": "select",
+          "id": "columns_mobile",
+          "options": [
+            {
+              "value": "1",
+              "label": "1 column"
+            },
+            {
+              "value": "2",
+              "label": "2 columns"
+            }
+          ],
+          "default": "2",
+          "label": "Number of columns on mobile"
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "Adapt to image"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            },
+            {
+              "value": "square",
+              "label": "Square"
+            }
+          ],
+          "default": "adapt",
+          "label": "Image ratio"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_secondary_image",
+          "default": false,
+          "label": "Show second image on hover"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "default": false,
+          "label": "Show vendor"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "default": false,
+          "label": "Show product rating"
         }
       ]
     },
@@ -2328,7 +2576,7 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
+    },
   ]
 }
 {% endschema %}

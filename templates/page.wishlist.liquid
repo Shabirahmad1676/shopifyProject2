@@ -1,0 +1,119 @@
+{% comment %}
+  Wishlist Page Template
+  This page displays all items in the user's wishlist
+{% endcomment %}
+
+{{ 'component-wishlist.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="wishlist-page">
+    <div class="wishlist-header">
+      <h1>My Wishlist</h1>
+      <p class="wishlist-count-text">
+        <span id="wishlist-total-count">0</span> items in your wishlist
+      </p>
+    </div>
+
+    <div id="wishlist-content">
+      <!-- Wishlist items will be populated by JavaScript -->
+    </div>
+
+    <div id="wishlist-empty" class="wishlist-empty" style="display: none;">
+      <div class="wishlist-empty__icon">
+        {{ 'icon-heart.svg' | inline_asset_content }}
+      </div>
+      <h2>Your wishlist is empty</h2>
+      <p>Start adding items to your wishlist by clicking the heart icon on any product.</p>
+      <a href="/collections/all" class="wishlist-empty__button">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for wishlist manager to be initialized
+  const initWishlistPage = () => {
+    if (window.wishlistManager) {
+      renderWishlistPage();
+    } else {
+      setTimeout(initWishlistPage, 100);
+    }
+  };
+
+  function renderWishlistPage() {
+    const wishlist = window.wishlistManager.getWishlist();
+    const wishlistContent = document.getElementById('wishlist-content');
+    const wishlistEmpty = document.getElementById('wishlist-empty');
+    const totalCount = document.getElementById('wishlist-total-count');
+
+    totalCount.textContent = wishlist.length;
+
+    if (wishlist.length === 0) {
+      wishlistContent.style.display = 'none';
+      wishlistEmpty.style.display = 'block';
+      return;
+    }
+
+    wishlistContent.style.display = 'block';
+    wishlistEmpty.style.display = 'none';
+
+    // Create wishlist grid
+    const grid = document.createElement('div');
+    grid.className = 'wishlist-grid';
+
+    wishlist.forEach(item => {
+      const wishlistItem = createWishlistItem(item);
+      grid.appendChild(wishlistItem);
+    });
+
+    wishlistContent.innerHTML = '';
+    wishlistContent.appendChild(grid);
+  }
+
+  function createWishlistItem(item) {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'wishlist-item';
+    itemDiv.innerHTML = `
+      <div class="wishlist-item__image">
+        <img src="${item.image || '/assets/no-image.svg'}" alt="${item.title}" loading="lazy">
+        <button class="wishlist-item__remove" data-product-id="${item.id}" data-wishlist-action="remove" aria-label="Remove from wishlist">
+          {{ 'icon-close.svg' | inline_asset_content }}
+        </button>
+      </div>
+      <div class="wishlist-item__content">
+        <h3 class="wishlist-item__title">
+          <a href="${item.url || '#'}">${item.title}</a>
+        </h3>
+        <div class="wishlist-item__price">${item.price || ''}</div>
+        <div class="wishlist-item__actions">
+          <button class="wishlist-item__add-to-cart" data-product-id="${item.id}">Add to Cart</button>
+          <a href="${item.url || '#'}" class="wishlist-item__view">View Product</a>
+        </div>
+      </div>
+    `;
+
+    return itemDiv;
+  }
+
+  // Listen for wishlist changes
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('[data-wishlist-action="remove"]')) {
+      const button = e.target.closest('[data-wishlist-action="remove"]');
+      const productId = button.dataset.productId;
+      window.wishlistManager.removeFromWishlist(productId);
+      renderWishlistPage();
+    }
+  });
+
+  // Listen for storage changes (cross-tab sync)
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'shopify_wishlist') {
+      renderWishlistPage();
+    }
+  });
+
+  initWishlistPage();
+});
+</script>

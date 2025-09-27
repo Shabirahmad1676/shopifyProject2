@@ -45,6 +45,22 @@
             "show_gift_card_recipient": true
           }
         },
+        "similar_products_VjqLfw": {
+          "type": "similar_products",
+          "settings": {
+            "heading": "You might also like",
+            "use_metafield": false,
+            "products": [],
+            "collection": "bracelets",
+            "products_to_show": 2,
+            "columns_desktop": 2,
+            "columns_mobile": "2",
+            "image_ratio": "adapt",
+            "show_secondary_image": false,
+            "show_vendor": false,
+            "show_rating": false
+          }
+        },
         "judge_me_reviews_preview_badge_ELwLre": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -90,6 +106,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "similar_products_VjqLfw",
         "judge_me_reviews_preview_badge_ELwLre",
         "collapsible_tab_TYgDHj",
         "collapsible_tab_fWwc6x",
