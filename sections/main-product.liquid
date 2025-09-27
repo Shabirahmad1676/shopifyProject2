@@ -674,6 +674,26 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'process_step' -%}
+                <div class="product__process-step" {{ block.shopify_attributes }}>
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="product__process-step-title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.image != blank -%}
+                    <div class="product__process-step-image">
+                      <img src="{{ block.settings.image | image_url: width: 500 }}" 
+                           alt="{{ block.settings.title | escape }}" 
+                           width="500" 
+                           height="300"
+                           loading="lazy">
+                    </div>
+                  {%- else -%}
+                    <div class="product__process-step-placeholder">
+                      <span>Image placeholder</span>
+                    </div>
+                  {%- endif -%}
+                </div>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -1461,6 +1481,25 @@
           "id": "enable_quick_add",
           "label": "t:sections.main-product.blocks.complementary_products.settings.enable_quick_add.label",
           "default": false
+        }
+      ]
+    },
+    {
+      "type": "process_step",
+      "name": "Process Step",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Process Step"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image",
+          "info": "Upload an image for this process step"
         }
       ]
     },
