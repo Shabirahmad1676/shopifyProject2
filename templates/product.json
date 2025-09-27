@@ -45,6 +45,10 @@
             "show_gift_card_recipient": true
           }
         },
+        "judge_me_reviews_preview_badge_ELwLre": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "collapsible_tab_TYgDHj": {
           "type": "collapsible_tab",
           "settings": {
@@ -86,6 +90,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "judge_me_reviews_preview_badge_ELwLre",
         "collapsible_tab_TYgDHj",
         "collapsible_tab_fWwc6x",
         "collapsible_tab_gH3bqt",

@@ -187,6 +187,7 @@
         "featured_collection_gg6PUD",
         "featured_collection_9adqef"
       ],
+      "disabled": true,
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "YOU MAY ALSO LIKE THIS",
