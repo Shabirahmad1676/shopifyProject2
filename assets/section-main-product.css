@@ -76,19 +76,8 @@ product-info {
   }
 }
 
-/* Dark mode support for process steps */
-@media (prefers-color-scheme: dark) {
-  .product__process-step-title {
-    color: #fff;
-  }
-  
-  .product__process-step-placeholder {
-    background-color: #333;
-    border-color: #555;
-    color: #999;
-  }
-}
 
+  
 .product {
   margin: 0;
 }

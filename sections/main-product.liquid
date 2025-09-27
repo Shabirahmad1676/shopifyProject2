@@ -15,6 +15,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'component-rich-text-editor.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -41,6 +42,7 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'rich-text-editor.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -226,6 +228,19 @@
                       {{ block.settings.page.content }}
                     </div>
                   </details>
+                </div>
+              {%- when 'rich_text_editor' -%}
+                <div class="product__rich-text-editor quick-add-hidden" {{ block.shopify_attributes }}>
+                  {%- if request.design_mode -%}
+                    <div class="rich-text-editor-container admin-mode" data-block-id="{{ block.id }}" data-content="{{ block.settings.content | escape }}">
+                    </div>
+                  {%- else -%}
+                    <div class="rich-text-editor-container readonly" data-block-id="{{ block.id }}">
+                      <div class="rich-text-content rich-text-readonly">
+                        {{ block.settings.content }}
+                      </div>
+                    </div>
+                  {%- endif -%}
                 </div>
               {%- when 'quantity_selector' -%}
                 <div
@@ -1181,6 +1196,18 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "rich_text_editor",
+      "name": "Rich Text Editor",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Start typing your description here...</p>"
         }
       ]
     },

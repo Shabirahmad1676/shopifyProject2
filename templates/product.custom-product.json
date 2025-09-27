@@ -128,15 +128,14 @@
         "process_step_mPeap4": {
           "type": "process_step",
           "settings": {
-            "title": "Part 2: Manufacturing & Production ",
-            "image": "shopify://shop_images/Figure_lark_and_berry_match-mobile2_png.png"
+            "title": "Part 3: Polish, Inspection & Delivery ",
+            "image": "shopify://shop_images/Figure_stackables_veto_square-small_png.png"
           }
         },
-        "text_CdNMKE": {
-          "type": "text",
+        "rich_text_editor_WWFgez": {
+          "type": "rich_text_editor",
           "settings": {
-            "text": "Text block",
-            "text_style": "body"
+            "content": "<p><strong>Fully Personalized</strong><br/>Select your metal, gemstones, finish, and engraving.From diamonds to moissanite, 10K to 24K gold—we use only the finest materials to bring your vision to life.<br/><br/><strong>The Process:  </strong><br/>– Share your idea or inspiration  <br/>– Our artisans handcraft it in our workshop  <br/>– Delivered complete, certified, and ready  to wear<br/><br/><strong>Certified Quality </strong><br/>Backed by a 100% Purity Guarantee and independent appraisal—because custom work deserves proof.<br/><br/>Begin your custom piece today. If you can imagine it, we’ll bring it to life.</p>"
           }
         }
       },
@@ -159,7 +158,7 @@
         "process_step_MtN4ii",
         "process_step_Ey4UhF",
         "process_step_mPeap4",
-        "text_CdNMKE"
+        "rich_text_editor_WWFgez"
       ],
       "settings": {
         "enable_sticky_info": true,
