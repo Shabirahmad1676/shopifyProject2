@@ -13,12 +13,12 @@
       .custom-footer .social a { margin-right:8px; display:inline-block; text-decoration:none; }
       /* Enhanced newsletter */
       .custom-footer .newsletter { margin-top:8px; }
-      .custom-footer .newsletter .input-group { display:flex; gap:8px; align-items:center; }
-      .custom-footer .newsletter input[type="email"] { padding:12px 16px; border-radius:28px; border:1px solid #2a2a2a; background:#0d0d0d; color:#fff; width:100%; box-sizing:border-box; outline:none; }
-      .custom-footer .newsletter input::placeholder { color:#888; }
-      .custom-footer .newsletter input:focus { border-color:#555; box-shadow:0 0 0 2px rgba(255,255,255,0.08); }
-      .custom-footer .newsletter button { padding:12px 16px; border-radius:28px; border:none; background:#fff; color:#000; cursor:pointer; font-weight:600; }
-      .custom-footer .newsletter button:hover { background:#e6e6e6; }
+      .custom-footer .newsletter .input-group { position:relative; display:flex; align-items:center; background:#fff; border-radius:50px; padding:4px; }
+      .custom-footer .newsletter input[type="email"] { padding:12px 16px; border:none; background:transparent; color:#333; width:100%; box-sizing:border-box; outline:none; border-radius:50px; }
+      .custom-footer .newsletter input::placeholder { color:#999; }
+      .custom-footer .newsletter input:focus { outline:none; }
+      .custom-footer .newsletter button { width:40px; height:40px; border-radius:50%; border:none; background:#000; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+      .custom-footer .newsletter button:hover { background:#333; }
       /* Footer bottom bar with social icons */
       .custom-footer .footer-bottom { border-top:1px solid #1a1a1a; margin-top:28px; padding-top:20px; display:flex; justify-content:space-between; align-items:center; }
       .custom-footer .footer-bottom .social a { margin-right:12px; color:#bbb; }
@@ -79,7 +79,11 @@
             <div class="input-group">
               <label for="Email" class="visually-hidden">Email</label>
               <input type="email" name="contact[email]" id="Email" placeholder="{{ section.settings.newsletter_placeholder | default: 'Enter Your Email' }}" required>
-              <button type="submit">{{ section.settings.newsletter_button | default: 'Subscribe' }}</button>
+              <button type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </button>
             </div>
           {% endform %}
         </div>
@@ -134,7 +138,7 @@
       { "type": "url", "id": "social_youtube", "label": "YouTube URL" },
       { "type": "url", "id": "social_tiktok", "label": "TikTok URL" },
       { "type": "text", "id": "newsletter_placeholder", "label": "Newsletter placeholder", "default": "Enter Your Email" },
-      { "type": "text", "id": "newsletter_button", "label": "Newsletter button text", "default": "→" },
+      { "type": "text", "id": "newsletter_button", "label": "Newsletter button text", "default": "↗" },
       { "type": "text", "id": "copyright_text", "label": "Copyright text", "default": "Copyright © 2025 All rights reserved." }
     ],
     "presets": [{ "name": "Custom Footer", "category": "Footer" }]

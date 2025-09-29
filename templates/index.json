@@ -23,7 +23,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "EXPLORE ALL COLLECTION",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify://collections",
             "button_style_secondary_1": true,
             "button_custom_style_1": false,
             "button_bg_color_1": "#ffffff",

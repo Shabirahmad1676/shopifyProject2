@@ -1,0 +1,292 @@
+{%- comment -%}
+  Video Introduction Section
+  Plays a full-screen video before showing the password page content
+{%- endcomment -%}
+
+{%- liquid
+  assign video_url = section.settings.video_url
+  assign video_autoplay = section.settings.video_autoplay
+  assign video_loop = section.settings.video_loop
+  assign video_muted = section.settings.video_muted
+  assign show_skip_button = section.settings.show_skip_button
+  assign skip_button_text = section.settings.skip_button_text | default: 'Skip Video'
+  assign video_duration = section.settings.video_duration | default: 10
+  
+  comment
+    If no video URL is set in section settings, try to get it from template settings
+  endcomment
+  if video_url == blank
+    for section in template.sections
+      if section.type == 'video-intro' and section.settings.video_url != blank
+        assign video_url = section.settings.video_url
+        break
+      endif
+    endfor
+  endif
+-%}
+
+{%- if video_url != blank -%}
+<div class="video-intro-overlay" id="videoIntroOverlay">
+  <div class="video-intro-container">
+    <video 
+      class="video-intro-player" 
+      id="videoIntroPlayer"
+      {% if video_autoplay %}autoplay{% endif %}
+      {% if video_loop %}loop{% endif %}
+      {% if video_muted %}muted{% endif %}
+      playsinline
+      preload="auto"
+    >
+      <source src="{{ video_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    
+    <div class="video-loading" id="videoLoading">
+      <div class="loading-spinner"></div>
+      <p>Loading video...</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.video-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-intro-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-intro-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.video-skip-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Doto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.video-skip-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.video-loading p {
+  font-family: 'Doto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Hide video overlay after completion */
+.video-intro-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-skip-button {
+    top: 15px;
+    right: 15px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const videoOverlay = document.getElementById('videoIntroOverlay');
+  const videoPlayer = document.getElementById('videoIntroPlayer');
+
+  const loadingElement = document.getElementById('videoLoading');
+  
+  if (!videoOverlay || !videoPlayer) return;
+  
+  // Hide loading when video can play
+  videoPlayer.addEventListener('canplay', function() {
+    if (loadingElement) {
+      loadingElement.style.display = 'none';
+    }
+  });
+  
+  // Handle video end
+  videoPlayer.addEventListener('ended', function() {
+    hideVideoIntro();
+  });
+  
+  // Handle skip button
+  if (skipButton) {
+    skipButton.addEventListener('click', function() {
+      hideVideoIntro();
+    });
+  }
+  
+  // Auto-hide after duration if specified
+  {%- if video_duration > 0 -%}
+  setTimeout(function() {
+    if (videoOverlay && !videoOverlay.classList.contains('hidden')) {
+      hideVideoIntro();
+    }
+  }, {{ video_duration | times: 1000 }});
+  {%- endif -%}
+  
+  function hideVideoIntro() {
+    if (videoOverlay) {
+      videoOverlay.classList.add('hidden');
+      // Show password page content
+      const passwordPageContent = document.getElementById('passwordPageContent');
+      if (passwordPageContent) {
+        passwordPageContent.style.display = 'block';
+      }
+      // Remove from DOM after transition
+      setTimeout(function() {
+        if (videoOverlay.parentNode) {
+          videoOverlay.parentNode.removeChild(videoOverlay);
+        }
+      }, 500);
+    }
+  }
+  
+  // Handle video errors
+  videoPlayer.addEventListener('error', function() {
+    console.error('Video failed to load');
+    hideVideoIntro();
+  });
+});
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Video Introduction",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Upload your video to Files in Shopify admin and paste the URL here. Supported formats: MP4, WebM, OGG"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay video",
+      "default": true,
+      "info": "Video will start playing automatically when page loads"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop video",
+      "default": false,
+      "info": "Video will repeat continuously"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Mute video",
+      "default": true,
+      "info": "Video will be muted (required for autoplay in most browsers)"
+    },
+    {
+      "type": "range",
+      "id": "video_duration",
+      "label": "Auto-hide after (seconds)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 10,
+      "info": "Set to 0 to disable auto-hide. Video will show until it ends or user skips."
+    },
+    {
+      "type": "header",
+      "content": "Skip Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_skip_button",
+      "label": "Show skip button",
+      "default": true,
+      "info": "Allow users to skip the video"
+    },
+    {
+      "type": "text",
+      "id": "skip_button_text",
+      "label": "Skip button text",
+      "default": "Skip Video",
+      "info": "Text displayed on the skip button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Introduction"
+    }
+  ]
+}
+{% endschema %}
